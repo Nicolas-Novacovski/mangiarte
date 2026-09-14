@@ -15,9 +15,15 @@ export const Footer: React.FC = () => {
           </a>
         </div>
 
-        <p className="mt-12 text-xs text-stone-500 font-sans-body tracking-[0.1em] uppercase">
-          &copy; {new Date().getFullYear()} Mangiarte Cucina Italiana. Todos os direitos reservados.
-        </p>
+        <div className="mt-10 pt-6 border-t border-white/10 w-full flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-400 font-sans-body">
+          <p className="tracking-wider">
+            &copy; {new Date().getFullYear()} Mangiarte Cucina Italiana. Todos os direitos reservados.
+          </p>
+          <p className="text-stone-400 text-xs tracking-wider flex items-center gap-1.5">
+            <span>Desenvolvido por</span>
+            <span className="font-semibold text-[#e1ddcc]">NT Solutions</span>
+          </p>
+        </div>
 
       </div>
     </footer>

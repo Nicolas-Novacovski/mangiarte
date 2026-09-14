@@ -379,17 +379,6 @@ export const carouselDishes: CarouselDish[] = [
     descricao: 'Bolinhos de risoto crocantes e dourados com recheio de queijo derretido',
     preco: 'R$ 25',
   },
-  {
-    imagem: '/WhatsApp Image 2026-09-14 at 14.42.26.jpeg',
-    titulo: 'Atmosfera Mangiarte',
-    categoria: 'Nosso Espaço',
-    descricao: 'Ambiente intimista e acolhedor no Shopping Água Verde',
-  },
 ];
 
-export const galleryImages = [
-  '/WhatsApp Image 2026-09-14 at 14.42.26.jpeg', 
-  '/WhatsApp Image 2026-09-14 at 14.42.27.jpeg',
-  '/WhatsApp Image 2026-09-14 at 14.42.25 (1).jpeg',
-  '/WhatsApp Image 2026-09-14 at 14.42.28.jpeg', 
-];
+export const galleryImages: string[] = [];
