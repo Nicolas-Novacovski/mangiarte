@@ -1,134 +1,207 @@
-import React from 'react';
-import { MapPin, Utensils, ArrowRight, Clock, Phone } from 'lucide-react';
-import { MangiarteLogo } from './MangiarteLogo';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 interface HeroProps {
   onExploreMenu: () => void;
   onGoToLocation: () => void;
 }
 
+const heroImages = [
+  {
+    url: '/pratos/gnocchi-supremo-01.jpg',
+    title: 'Gnocchi Supremo',
+    tag: 'Filé Mignon & Molho Funghi',
+  },
+  {
+    url: '/risotos/risoto-camarao-01.jpg',
+    title: 'Risoto de Camarão',
+    tag: 'Arroz Arbóreo & Camarões Suculentos',
+  },
+  {
+    url: '/pratos/salmao-mediterraneo-01.jpg',
+    title: 'Salmão Mediterrâneo',
+    tag: 'Salmão Grelhado & Fettuccine ao Pesto',
+  },
+  {
+    url: '/pratos/escalope-4-formaggio-01.jpg',
+    title: 'Escalope 4 Formaggio',
+    tag: 'Filé Mignon ao Blend 4 Queijos',
+  },
+];
+
 export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLElement>(null);
+
+  // Parallax scroll effect using framer-motion
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const yBackground = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  const yBgShape = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const yText = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const yImage = useTransform(scrollYProgress, [0, 1], [0, -30]);
+
+  // Troca automática a cada 5 segundos (5000ms)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
   return (
-    <section
-      id="hero-section"
-      className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-stone-950"
+    <section 
+      ref={containerRef}
+      className="relative w-full min-h-[90vh] md:min-h-screen pt-24 pb-12 px-6 flex flex-col md:flex-row items-center justify-center bg-[#ebe8dc] overflow-hidden"
     >
-      {/* 
-        Background image: Photo of the signature Camarão Provençal dish setup 
-        (penne with creamy parmesan garlic sauce, golden gratin cheese, prawns, red wine & chips on wood table)
-        Without any overlay banner text/legend ("tire a legenda" as requested).
-      */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=2400&q=85"
-          alt="Camarão Provençal - Penne ao molho cremoso de parmesão gratinado com camarões da Mangiarte Cucina Italiana"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-105"
-        />
-        {/* Cinematic dark gradients to ensure excellent contrast and text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-stone-950/70" />
-        <div className="absolute inset-0 bg-radial from-transparent via-stone-950/40 to-stone-950/80" />
-      </div>
+      {/* Background Decorative Parallax Elements */}
+      <motion.div 
+        style={{ y: yBackground }}
+        className="absolute inset-0 pointer-events-none opacity-40 select-none"
+      >
+        <div className="absolute top-10 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#8b261b]/10 to-transparent blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#2c3522]/10 to-transparent blur-3xl" />
+      </motion.div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Brand Logo Badge from 2nd Image */}
-        <div className="mb-6 transform hover:scale-105 transition-transform duration-300">
-          <MangiarteLogo size="lg" />
-        </div>
-
-        {/* Location & Schedule pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
-          <div
-            id="hero-location-badge"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-stone-200 text-xs font-medium"
-          >
-            <MapPin className="w-3.5 h-3.5 text-amber-400" />
-            <span>Shopping Água Verde • Curitiba - PR</span>
-          </div>
-
-          <div
-            id="hero-hours-badge"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-500/30 text-amber-200 text-xs font-medium"
-          >
-            <Clock className="w-3.5 h-3.5 text-amber-400" />
-            <span>Menu Executivo: Seg a Sex das 11h às 15h</span>
-          </div>
-        </div>
-
-        {/* Catchy headline */}
-        <h1
-          id="hero-title"
-          className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone-100 leading-[1.08] max-w-4xl"
+      {/* Floating subtle watermark with parallax */}
+      <motion.div
+        style={{ y: yBgShape }}
+        className="absolute right-10 top-1/4 pointer-events-none select-none hidden lg:block opacity-[0.03] text-[#161616] font-serif-cormorant text-[16rem] leading-none"
+      >
+        M
+      </motion.div>
+      
+      {/* Text Content - Left Side with Subtle Parallax */}
+      <motion.div 
+        style={{ y: yText }}
+        className="w-full md:w-1/2 z-10 flex flex-col justify-center pr-0 md:pr-12 lg:pr-20 mb-12 md:mb-0"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          A Autêntica Tradição da{' '}
-          <span className="italic font-normal text-amber-300">
-            Cozinha Italiana
-          </span>
-        </h1>
+          <div className="inline-block px-3.5 py-1.5 bg-[#8b261b]/10 text-[#8b261b] rounded-full border border-[#8b261b]/20 text-[10px] md:text-xs tracking-[0.2em] uppercase mb-6 font-bold">
+            Praça de Alimentação • Shopping Água Verde
+          </div>
+          
+          <h1 className="font-serif-cormorant text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.92] text-[#161616] mb-8">
+            A tradição da <br />
+            <span className="italic text-[#2c3522]">autêntica</span> <br />
+            cantina italiana.
+          </h1>
+          
+          <p className="text-stone-600 text-base md:text-lg max-w-md font-sans-body leading-relaxed mb-10">
+            Receitas clássicas, porções generosas e atendimento rápido na praça de alimentação do Shopping Água Verde. A escolha perfeita para o seu almoço ou jantar.
+          </p>
 
-        {/* Subtitle */}
-        <p
-          id="hero-description"
-          className="mt-5 text-base sm:text-lg md:text-xl text-stone-300 max-w-2xl font-normal leading-relaxed"
-        >
-          No Shopping Água Verde, uma experiência gastronômica memorável.
-          Massas artesanais, molhos preparados lentamente e o famoso{' '}
-          <strong className="text-amber-200 font-medium">Menu Executivo da Semana</strong> com pratos a partir de R$ 28.
-        </p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <button
+              onClick={onExploreMenu}
+              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-white bg-[#2c3522] px-8 py-4 rounded-full transition-all hover:bg-[#3d4a30] hover:shadow-lg w-max"
+            >
+              <span>Ver o Cardápio</span>
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+            <button
+              onClick={onGoToLocation}
+              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-[#161616] border border-[#161616] px-8 py-4 rounded-full transition-all hover:bg-[#161616] hover:text-white w-max"
+            >
+              Como Chegar
+            </button>
+          </div>
+        </motion.div>
+      </motion.div>
 
-        {/* Action Buttons (Reservations removed as requested; focused on Menu & Mall Visit) */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          <button
-            type="button"
-            id="hero-explore-menu-btn"
-            onClick={onExploreMenu}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-semibold px-8 py-3.5 rounded-full text-sm transition-all duration-200 shadow-lg shadow-amber-900/30 hover:-translate-y-0.5 cursor-pointer"
-          >
-            <Utensils className="w-4 h-4 text-stone-950" />
-            <span>Ver Cardápio & Executivo</span>
-            <ArrowRight className="w-4 h-4 text-stone-950" />
-          </button>
+      {/* Image Content - Right Side with Slideshow & Subtle Parallax */}
+      <motion.div 
+        style={{ y: yImage }}
+        className="w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-[78vh] relative z-10"
+      >
+        <div className="w-full h-full relative rounded-2xl overflow-hidden shadow-2xl border-2 border-[#d6d2c4] bg-[#161616]">
+          
+          {/* Slideshow com AnimatePresence */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={heroImages[currentIndex].url}
+                alt={heroImages[currentIndex].title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            </motion.div>
+          </AnimatePresence>
 
-          <button
-            type="button"
-            id="hero-location-btn"
-            onClick={onGoToLocation}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-stone-100 border border-white/20 px-7 py-3.5 rounded-full font-medium text-sm transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5 cursor-pointer"
-          >
-            <MapPin className="w-4 h-4 text-amber-400" />
-            <span>Onde Estamos no Shopping</span>
-          </button>
+          {/* Badge do Prato em Exibição */}
+          <div className="absolute bottom-5 left-5 right-5 z-20 flex items-end justify-between pointer-events-none">
+            <div className="bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/15 text-white pointer-events-auto">
+              <span className="text-[10px] tracking-widest uppercase font-bold text-[#e1ddcc] block">
+                {heroImages[currentIndex].tag}
+              </span>
+              <h3 className="font-serif-cormorant text-2xl font-semibold text-white leading-tight">
+                {heroImages[currentIndex].title}
+              </h3>
+            </div>
+
+            {/* Controles de Slideshow */}
+            <div className="flex items-center gap-2 pointer-events-auto bg-black/60 backdrop-blur-md p-1.5 rounded-full border border-white/15">
+              <button
+                onClick={handlePrev}
+                aria-label="Imagem anterior"
+                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors"
+              >
+                <ChevronLeft size={16} />
+              </button>
+
+              {/* Indicadores das 4 Imagens */}
+              <div className="flex items-center gap-1.5 px-1">
+                {heroImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Ir para imagem ${idx + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === currentIndex 
+                        ? 'w-6 bg-[#e1ddcc]' 
+                        : 'w-2 bg-white/40 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={handleNext}
+                aria-label="Próxima imagem"
+                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+
         </div>
+      </motion.div>
 
-        {/* Quick Highlights of Mall dining */}
-        <div className="mt-12 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-white/10 w-full max-w-3xl">
-          <div className="flex flex-col items-center text-center">
-            <span className="font-serif-cormorant text-2xl font-bold text-amber-200">R$ 28</span>
-            <span className="text-[11px] text-stone-400 mt-0.5 uppercase tracking-wider font-medium">
-              Executivo a partir de
-            </span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="font-serif-cormorant text-2xl font-bold text-amber-200">Seg a Sex</span>
-            <span className="text-[11px] text-stone-400 mt-0.5 uppercase tracking-wider font-medium">
-              Almoço das 11h às 15h
-            </span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="font-serif-cormorant text-2xl font-bold text-amber-200">Pratos Frescos</span>
-            <span className="text-[11px] text-stone-400 mt-0.5 uppercase tracking-wider font-medium">
-              Feitos na hora
-            </span>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <span className="font-serif-cormorant text-2xl font-bold text-amber-200">Shopping</span>
-            <span className="text-[11px] text-stone-400 mt-0.5 uppercase tracking-wider font-medium">
-              Estacionamento & Segurança
-            </span>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

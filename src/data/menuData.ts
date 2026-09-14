@@ -120,7 +120,7 @@ export const CHEF_FEATURED_DISH: MenuItem = {
   id: 'destaque-camarao-provencal',
   name: 'Camarão Provençal',
   italianName: 'Penne al Parmigiano e Gamberi alla Provenzale',
-  description: 'Penne ao molho cremoso de parmesão com alho gratinado com queijo, coberto com camarões à provençal. Acompanha batatas chips artesanais crocantes.',
+  description: 'Penne ao molho cremoso de parmesão com alho gratinado com queijo, coberto com camarões à provençal. Acompanha batatas chips crocantes.',
   price: 59.00,
   category: 'pratos',
   image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=1200&q=85',
@@ -131,8 +131,8 @@ export const CHEF_FEATURED_DISH: MenuItem = {
 export const MENU_CATEGORIES: MenuCategory[] = [
   { id: 'executivo', label: 'Menu Executivo', subtitle: 'Servido de segunda a sexta das 11h às 15h' },
   { id: 'pratos', label: 'Especiais & Carnes', subtitle: 'Pratos especiais e receitas exclusivas' },
-  { id: 'massas', label: 'Massas Italianas', subtitle: 'Massas selecionadas com molhos artesanais' },
-  { id: 'sobremesas', label: 'Sobremesas', subtitle: 'Doces artesanais para finalizar' },
+  { id: 'massas', label: 'Massas Italianas', subtitle: 'Massas tradicionais e molhos saborosos' },
+  { id: 'sobremesas', label: 'Sobremesas', subtitle: 'Doces clássicos para finalizar' },
   { id: 'bebidas', label: 'Bebidas & Vinhos', subtitle: 'Vinhos, sucos e refrigerantes' },
 ];
 
@@ -143,7 +143,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     id: 'prato-parmegiana-mignon',
     name: 'Parmegiana de Filé Mignon',
     italianName: 'Filetto di Manzo alla Parmigiana',
-    description: 'Filé mignon selecionado empanado crocante, coberto com molho de pomodoro artesanal e queijo muçarela gratinado. Acompanha arroz e fritas.',
+    description: 'Filé mignon selecionado empanado crocante, coberto com molho de pomodoro e queijo muçarela gratinado. Acompanha arroz e fritas.',
     price: 64.00,
     category: 'pratos',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
@@ -205,7 +205,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     id: 'doce-panna-cotta',
     name: 'Panna Cotta com Frutas Vermelhas',
     italianName: 'Panna Cotta ai Frutti di Bosco',
-    description: 'Creme de leite fresco com fava de baunilha, textura aveludada, coberta com calda artesanal fresca de morango, amora e mirtilo.',
+    description: 'Creme de baunilha com textura aveludada, coberta com calda de morango, amora e mirtilo.',
     price: 22.00,
     category: 'sobremesas',
     image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80',
