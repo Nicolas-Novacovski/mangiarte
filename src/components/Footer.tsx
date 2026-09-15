@@ -4,8 +4,8 @@ import { Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#161616] text-[#f4f3ef] pt-20 pb-10 px-6 border-t-[6px] border-[#8b261b]">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+    <footer className="bg-[#161616] text-[#f4f3ef] pt-20 pb-10 border-t-[6px] border-[#8b261b]">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
         
         <MangiarteLogo size="md" theme="dark" />
         
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           </p>
           <p className="text-stone-400 text-xs tracking-wider flex items-center gap-1.5">
             <span>Desenvolvido por</span>
-            <span className="font-semibold text-[#e1ddcc]">NT Solutions</span>
+            <a href="https://nicetechsolutions.com.br" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#e1ddcc] hover:text-white transition-colors cursor-pointer">NT Solutions</a>
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { executivoSemana, cardapioGeral } from '../data/mangiarte';
 import { Sparkles, UtensilsCrossed, Calendar, Eye, X, Image as ImageIcon } from 'lucide-react';
@@ -17,6 +17,18 @@ export const MenuSection: React.FC = () => {
   const [selectedDishModal, setSelectedDishModal] = useState<DishModalData | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (selectedDishModal || showFlyerModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedDishModal, showFlyerModal]);
+
   // Subtle Parallax Scroll Effect on Section Background
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -27,7 +39,7 @@ export const MenuSection: React.FC = () => {
   const yDecorText = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="menu" ref={sectionRef} className="py-24 bg-[#ebe8dc] px-4 md:px-8 border-t border-[#d6d2c4] relative overflow-hidden">
+    <section id="menu" ref={sectionRef} className="py-24 bg-[#ebe8dc] border-t border-[#d6d2c4] relative overflow-hidden">
       {/* Background Parallax Subtle Layers */}
       <motion.div 
         style={{ y: yBgDecor }}
@@ -45,7 +57,7 @@ export const MenuSection: React.FC = () => {
         Menu
       </motion.div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <motion.div 
@@ -53,7 +65,7 @@ export const MenuSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-left mb-12"
         >
           <span className="text-[11px] tracking-[0.3em] uppercase text-[#8b261b] font-bold mb-3 block">
             Cucina Italiana Tradizionale
@@ -61,16 +73,16 @@ export const MenuSection: React.FC = () => {
           <h2 className="font-serif-cormorant text-5xl md:text-6xl text-[#161616]">
             Nossos Cardápios
           </h2>
-          <p className="text-stone-600 font-sans-body text-sm max-w-xl mx-auto mt-3">
+          <p className="text-stone-600 font-sans-body text-sm max-w-xl mt-3">
             Escolha abaixo qual cardápio deseja visualizar. Pratos saborosos e clássicos da culinária italiana servidos com carinho no Shopping Água Verde.
           </p>
         </motion.div>
 
         {/* Menu Switcher Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 max-w-2xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mb-16 max-w-2xl">
           <button
             onClick={() => setActiveMenuTab('executivo')}
-            className={`w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
               activeMenuTab === 'executivo'
                 ? 'bg-[#2c3522] text-white border-[#2c3522] shadow-lg scale-100 ring-2 ring-[#2c3522]/20'
                 : 'bg-[#f4f3ef] text-[#2c3522] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -87,7 +99,7 @@ export const MenuSection: React.FC = () => {
 
           <button
             onClick={() => setActiveMenuTab('geral')}
-            className={`w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
               activeMenuTab === 'geral'
                 ? 'bg-[#8b261b] text-white border-[#8b261b] shadow-lg scale-100 ring-2 ring-[#8b261b]/20'
                 : 'bg-[#f4f3ef] text-[#161616] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -135,7 +147,7 @@ export const MenuSection: React.FC = () => {
                   </div>
                   <button
                     onClick={() => setShowFlyerModal(true)}
-                    className="text-[11px] font-bold tracking-wider uppercase text-[#8b261b] border border-[#8b261b] hover:bg-[#8b261b] hover:text-white px-4 py-2.5 rounded-full transition-all duration-300"
+                    className="cursor-pointer text-[11px] font-bold tracking-wider uppercase text-[#8b261b] border border-[#8b261b] hover:bg-[#8b261b] hover:text-white px-4 py-2.5 rounded-full transition-all duration-300"
                   >
                     Ver Panfleto Oficial
                   </button>
@@ -945,115 +957,115 @@ export const MenuSection: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Modal de Foto Individual de Prato */}
-        <AnimatePresence>
-          {selectedDishModal && (
+      </div>
+      
+      {/* Modal de Foto Individual de Prato */}
+      <AnimatePresence>
+        {selectedDishModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedDishModal(null)}
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm p-4 flex items-center justify-center"
+          >
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedDishModal(null)}
-              className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm p-4 flex items-center justify-center cursor-pointer"
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#f4f3ef] text-[#161616] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
             >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-[#161616] text-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl relative border border-white/10"
-              >
-                <div className="flex items-center justify-between p-4 px-6 border-b border-white/10 bg-[#1c1c1c]">
-                  <div className="flex items-center gap-2">
-                    <UtensilsCrossed size={14} className="text-[#8b261b]" />
-                    <span className="text-xs uppercase tracking-widest font-bold text-stone-300">
-                      Prato Mangiarte
-                    </span>
+              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[#ebe8dc]">
+                <div className="flex items-center gap-2">
+                  <UtensilsCrossed size={14} className="text-[#8b261b]" />
+                  <span className="text-xs uppercase tracking-widest font-bold text-stone-600">
+                    Prato Mangiarte
+                  </span>
+                </div>
+                <button
+                  onClick={() => setSelectedDishModal(null)}
+                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[#161616] transition-colors cursor-pointer"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              <div className="relative aspect-[16/11] sm:aspect-[4/3] w-full bg-stone-950 overflow-hidden">
+                <img
+                  src={selectedDishModal.imagem}
+                  alt={selectedDishModal.nome}
+                  className="w-full h-full object-cover"
+                />
+                {selectedDishModal.tag && (
+                  <div className="absolute top-3 left-3 bg-[#8b261b] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                    {selectedDishModal.tag}
                   </div>
-                  <button
-                    onClick={() => setSelectedDishModal(null)}
-                    className="p-1 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                  >
-                    <X size={18} />
-                  </button>
-                </div>
+                )}
+              </div>
 
-                <div className="relative aspect-[4/3] w-full bg-black overflow-hidden">
-                  <img
-                    src={selectedDishModal.imagem}
-                    alt={selectedDishModal.nome}
-                    className="w-full h-full object-cover"
-                  />
-                  {selectedDishModal.tag && (
-                    <div className="absolute top-3 left-3 bg-[#8b261b] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                      {selectedDishModal.tag}
-                    </div>
-                  )}
-                </div>
-
-                <div className="p-6 bg-[#1a1a1a]">
-                  <div className="flex justify-between items-baseline gap-4 mb-2">
-                    <h4 className="font-serif-cormorant text-2xl font-semibold text-white">
+              <div className="p-4 sm:p-6 bg-[#f4f3ef] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                <div>
+                  <div className="flex justify-between items-baseline gap-4 mb-1">
+                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[#161616] font-semibold">
                       {selectedDishModal.nome}
                     </h4>
-                    <span className="text-lg font-bold text-[#e1ddcc] whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-[#8b261b] px-2.5 py-0.5 rounded-full whitespace-nowrap">
                       R$ {selectedDishModal.preco}
                     </span>
                   </div>
                   {selectedDishModal.descricao && (
-                    <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans-body mb-4">
+                    <p className="text-stone-600 text-xs sm:text-sm font-sans-body max-w-md mb-2">
                       {selectedDishModal.descricao}
                     </p>
                   )}
-                  <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-stone-400">
+                  <div className="pt-3 border-t border-[#d6d2c4] flex items-center justify-between text-[11px] text-stone-500">
                     <span>Shopping Água Verde • Curitiba</span>
-                    <span className="text-[#e1ddcc] font-medium">Cucina Tradizionale</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        {/* Modal para Visualização do Panfleto Oficial do Executivo */}
-        <AnimatePresence>
-          {showFlyerModal && (
+      {/* Modal para Visualização do Panfleto Oficial do Executivo */}
+      <AnimatePresence>
+        {showFlyerModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowFlyerModal(false)}
+            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm p-4 flex flex-col items-center justify-center"
+          >
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowFlyerModal(false)}
-              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center cursor-pointer"
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#f4f3ef] p-2 md:p-4 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col relative cursor-default border border-[#d6d2c4]"
             >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-[#161616] p-2 md:p-4 rounded-2xl max-w-xl w-full max-h-[90vh] overflow-auto shadow-2xl relative"
-              >
-                <div className="flex justify-between items-center mb-3 px-2">
-                  <span className="text-xs tracking-widest text-[#d6d2c4] uppercase font-bold">
-                    Cardápio Oficial • Mangiarte
-                  </span>
-                  <button
-                    onClick={() => setShowFlyerModal(false)}
-                    className="text-white hover:text-[#8b261b] text-sm font-bold uppercase tracking-wider px-3 py-1 bg-white/10 rounded-full"
-                  >
-                    Fechar &times;
-                  </button>
-                </div>
-                <img
-                  src="/WhatsApp Image 2026-09-02 at 21.14.24.jpeg"
-                  alt="Menu Executivo da Semana Oficial"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </motion.div>
+              <div className="flex justify-between items-center mb-3 px-2">
+                <span className="text-xs tracking-widest text-stone-600 uppercase font-bold">
+                  Cardápio Oficial • Mangiarte
+                </span>
+                <button
+                  onClick={() => setShowFlyerModal(false)}
+                  className="text-[#161616] hover:text-[#8b261b] text-sm font-bold uppercase tracking-wider px-3 py-1 bg-black/5 hover:bg-black/10 rounded-full cursor-pointer transition-colors"
+                >
+                  Fechar &times;
+                </button>
+              </div>
+              <img
+                src="/panfleto-oficial.jpeg"
+                alt="Menu Executivo da Semana Oficial"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </motion.div>
-          )}
-        </AnimatePresence>
-
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

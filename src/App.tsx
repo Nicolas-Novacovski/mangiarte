@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { PromotionsSection } from './components/PromotionsSection';
 import { MenuSection } from './components/MenuSection';
 import { GalleryAndHighlights } from './components/AboutSection';
 import { LocationAndContact } from './components/LocationAndContact';
@@ -32,9 +31,8 @@ export default function App() {
           onGoToLocation={handleScrollToLocation}
         />
 
-        <PromotionsSection />
-        <MenuSection />
         <GalleryAndHighlights />
+        <MenuSection />
         <LocationAndContact />
       </main>
 

@@ -6,7 +6,7 @@ import { MangiarteLogo } from './MangiarteLogo';
 export const LocationAndContact: React.FC = () => {
   return (
     <section id="contato" className="py-24 bg-[#ebe8dc] border-t border-[#d6d2c4]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Info Side */}
@@ -56,7 +56,7 @@ export const LocationAndContact: React.FC = () => {
                       href="https://www.google.com/maps/search/?api=1&query=Shopping+Água+Verde+Curitiba" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] border-b border-[#8b261b] pb-1 hover:text-[#6b1d15] hover:border-[#6b1d15] transition-colors"
+                      className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] border-b border-[#8b261b] pb-1 hover:text-[#6b1d15] hover:border-[#6b1d15] transition-colors cursor-pointer"
                     >
                       Ver Rota no Google Maps
                     </a>

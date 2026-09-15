@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
         isScrolled ? 'bg-[#ebe8dc]/90 backdrop-blur-md border-b border-[#d6d2c4] py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto w-full px-6 lg:px-12 flex items-center justify-between">
         
         {/* Logo */}
         <div className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -38,14 +38,14 @@ export const Header: React.FC = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-4">
-          <button onClick={() => scrollTo('destaques')} className="px-4 py-2 rounded-full border border-[#8b261b] text-[#8b261b] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#8b261b] hover:text-white transition-colors">Destaques</button>
-          <button onClick={() => scrollTo('menu')} className="px-4 py-2 rounded-full border border-[#2c3522] text-[#2c3522] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#2c3522] hover:text-white transition-colors">Cardápio</button>
-          <button onClick={() => scrollTo('contato')} className="px-4 py-2 rounded-full border border-[#2c3522] text-[#2c3522] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#2c3522] hover:text-white transition-colors">Localização</button>
+          <button onClick={() => scrollTo('galeria')} className="cursor-pointer px-4 py-2 rounded-full border border-[#8b261b] text-[#8b261b] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#8b261b] hover:text-white transition-colors">Galeria</button>
+          <button onClick={() => scrollTo('menu')} className="cursor-pointer px-4 py-2 rounded-full border border-[#2c3522] text-[#2c3522] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#2c3522] hover:text-white transition-colors">Cardápio</button>
+          <button onClick={() => scrollTo('contato')} className="cursor-pointer px-4 py-2 rounded-full border border-[#2c3522] text-[#2c3522] text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#2c3522] hover:text-white transition-colors">Localização</button>
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-[#161616]"
+          className="md:hidden text-[#161616] cursor-pointer"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,9 +61,9 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 w-full bg-[#ebe8dc] border-b border-[#d6d2c4] py-6 px-6 flex flex-col gap-5 shadow-xl md:hidden"
           >
-            <button onClick={() => scrollTo('destaques')} className="text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] text-left">Destaques da Casa</button>
-            <button onClick={() => scrollTo('menu')} className="text-xs tracking-[0.2em] uppercase font-bold text-[#161616] text-left">Cardápio</button>
-            <button onClick={() => scrollTo('contato')} className="text-xs tracking-[0.2em] uppercase font-bold text-[#161616] text-left">Localização</button>
+            <button onClick={() => scrollTo('galeria')} className="cursor-pointer text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] text-left">Galeria</button>
+            <button onClick={() => scrollTo('menu')} className="cursor-pointer text-xs tracking-[0.2em] uppercase font-bold text-[#161616] text-left">Cardápio</button>
+            <button onClick={() => scrollTo('contato')} className="cursor-pointer text-xs tracking-[0.2em] uppercase font-bold text-[#161616] text-left">Localização</button>
           </motion.div>
         )}
       </AnimatePresence>

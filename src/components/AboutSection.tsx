@@ -45,6 +45,18 @@ export const GalleryAndHighlights: React.FC = () => {
     return () => window.removeEventListener('resize', checkScroll);
   }, []);
 
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (activeModalDish) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeModalDish]);
+
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const firstCard = scrollContainerRef.current.firstElementChild as HTMLElement | null;
@@ -92,7 +104,7 @@ export const GalleryAndHighlights: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 bg-[#ebe8dc] overflow-hidden border-t border-[#d6d2c4] relative">
+    <section id="galeria" ref={sectionRef} className="py-20 md:py-24 bg-[#ebe8dc] overflow-hidden border-t border-[#d6d2c4] relative">
       {/* Background Parallax Subtle Ambient Shapes */}
       <motion.div 
         style={{ y: yBgDecor }}
@@ -111,7 +123,7 @@ export const GalleryAndHighlights: React.FC = () => {
       </motion.div>
       
       {/* Highlights Text */}
-      <div className="max-w-4xl mx-auto px-6 text-center mb-16 md:mb-20 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-left mb-16 md:mb-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,12 +133,12 @@ export const GalleryAndHighlights: React.FC = () => {
           <span className="text-[11px] tracking-[0.25em] uppercase font-bold text-[#8b261b] block mb-3">
             Tradição & Praticidade
           </span>
-          <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl text-[#161616] leading-tight mb-12">
-            Culinária italiana saborosa no seu dia a dia.<br/>
-            <span className="italic text-[#8b261b]">Na Praça de Alimentação do Shopping Água Verde.</span>
+          <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl text-[#161616] leading-tight mb-12 max-w-3xl">
+            Culinária italiana saborosa no seu dia a dia.
+            <span className="italic text-[#8b261b] block mt-1">Na Praça de Alimentação do Shopping Água Verde.</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 xl:gap-12 text-left">
             <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-[#d6d2c4]">
               <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] mb-3 border-b border-[#8b261b]/20 pb-2">
                 Massas & Pratos
@@ -156,7 +168,7 @@ export const GalleryAndHighlights: React.FC = () => {
       </div>
 
       {/* Carousel Header with Navigation Controls */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 mb-6 sm:mb-8 flex items-end justify-between gap-4">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-6 sm:mb-8 flex items-end justify-between gap-4">
         <div>
           <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#2c3522] block mb-1">
             Galeria Gastronômica
@@ -171,7 +183,7 @@ export const GalleryAndHighlights: React.FC = () => {
           <button
             onClick={() => handleScroll('left')}
             disabled={!canScrollLeft}
-            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all ${
+            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
               canScrollLeft
                 ? 'border-[#2c3522] bg-white text-[#2c3522] hover:bg-[#2c3522] hover:text-white shadow-sm active:scale-95'
                 : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
@@ -183,7 +195,7 @@ export const GalleryAndHighlights: React.FC = () => {
           <button
             onClick={() => handleScroll('right')}
             disabled={!canScrollRight}
-            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all ${
+            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
               canScrollRight
                 ? 'border-[#2c3522] bg-white text-[#2c3522] hover:bg-[#2c3522] hover:text-white shadow-sm active:scale-95'
                 : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
@@ -196,13 +208,19 @@ export const GalleryAndHighlights: React.FC = () => {
       </div>
 
       {/* Smooth Horizontal Scrolling Carousel with Dishes Optimized for Mobile */}
-      <div className="w-full max-w-[1400px] mx-auto">
+      <div className="w-full max-w-[1400px] mx-auto relative">
+        {/* Left Blur Overlay */}
+        <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-r from-[#ebe8dc] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_right,black,transparent)]" />
+        
+        {/* Right Blur Overlay */}
+        <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-l from-[#ebe8dc] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_left,black,transparent)]" />
+        
         <div
           ref={scrollContainerRef}
           onScroll={checkScroll}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
-          className="flex gap-3.5 sm:gap-6 overflow-x-auto scrollbar-none px-4 sm:px-6 md:px-12 pb-4 pt-1 snap-x snap-mandatory overscroll-x-contain scroll-smooth"
+          className="flex gap-3.5 sm:gap-6 overflow-x-auto scrollbar-none px-6 lg:px-12 pb-4 pt-1 snap-x snap-mandatory overscroll-x-contain scroll-smooth"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
@@ -271,7 +289,7 @@ export const GalleryAndHighlights: React.FC = () => {
                 key={dotIdx}
                 onClick={() => scrollToDishIndex(dotIdx)}
                 aria-label={`Ir para prato ${dotIdx + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   dotIdx === activeDotIndex
                     ? 'w-6 bg-[#8b261b]'
                     : 'w-1.5 bg-[#8b261b]/25 hover:bg-[#8b261b]/50'
@@ -294,22 +312,22 @@ export const GalleryAndHighlights: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveModalDish(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-3 sm:p-6 md:p-8 flex items-center justify-center cursor-pointer"
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md p-3 sm:p-6 md:p-8 flex items-center justify-center"
           >
             <motion.div
               initial={{ scale: 0.94, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.94, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#161616] text-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-white/10"
+              className="bg-[#f4f3ef] text-[#161616] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
             >
-              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-white/10 bg-[#1c1c1c]">
-                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#e1ddcc]">
+              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[#ebe8dc]">
+                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8b261b]">
                   {activeModalDish.categoria}
                 </span>
                 <button
                   onClick={() => setActiveModalDish(null)}
-                  className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[#161616] transition-colors cursor-pointer"
                   aria-label="Fechar modal"
                 >
                   <X size={18} />
@@ -324,19 +342,19 @@ export const GalleryAndHighlights: React.FC = () => {
                 />
               </div>
 
-              <div className="p-4 sm:p-6 bg-[#1a1a1a] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="p-4 sm:p-6 bg-[#f4f3ef] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                   <div className="flex items-center gap-2.5 mb-1">
-                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-white font-semibold">
+                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[#161616] font-semibold">
                       {activeModalDish.titulo}
                     </h4>
                     {activeModalDish.preco && (
-                      <span className="text-xs sm:text-sm font-bold text-[#e1ddcc] bg-[#2c3522] px-2.5 py-0.5 rounded-full">
+                      <span className="text-xs sm:text-sm font-bold text-white bg-[#8b261b] px-2.5 py-0.5 rounded-full">
                         {activeModalDish.preco}
                       </span>
                     )}
                   </div>
-                  <p className="text-stone-300 text-xs sm:text-sm font-sans-body max-w-md">
+                  <p className="text-stone-600 text-xs sm:text-sm font-sans-body max-w-md">
                     {activeModalDish.descricao}
                   </p>
                 </div>
@@ -346,7 +364,7 @@ export const GalleryAndHighlights: React.FC = () => {
                     setActiveModalDish(null);
                     handleScrollToMenu();
                   }}
-                  className="w-full sm:w-auto shrink-0 bg-[#8b261b] hover:bg-[#a32e21] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-colors text-center"
+                  className="w-full sm:w-auto shrink-0 bg-[#8b261b] hover:bg-[#a32e21] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-colors text-center cursor-pointer"
                 >
                   Ver no Menu
                 </button>

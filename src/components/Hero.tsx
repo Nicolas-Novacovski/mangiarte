@@ -11,22 +11,12 @@ const heroImages = [
   {
     url: '/pratos/gnocchi-supremo-01.jpg',
     title: 'Gnocchi Supremo',
-    tag: 'Filé Mignon & Molho Funghi',
+    tag: 'Massa Artesanal',
   },
   {
-    url: '/risotos/risoto-camarao-01.jpg',
-    title: 'Risoto de Camarão',
-    tag: 'Arroz Arbóreo & Camarões Suculentos',
-  },
-  {
-    url: '/pratos/salmao-mediterraneo-01.jpg',
-    title: 'Salmão Mediterrâneo',
-    tag: 'Salmão Grelhado & Fettuccine ao Pesto',
-  },
-  {
-    url: '/pratos/escalope-4-formaggio-01.jpg',
-    title: 'Escalope 4 Formaggio',
-    tag: 'Filé Mignon ao Blend 4 Queijos',
+    url: '/pratos/carbonara-crocante.jpg',
+    title: 'Spaghetti alla Carbonara',
+    tag: 'Clássico Italiano',
   },
 ];
 
@@ -65,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
   return (
     <section 
       ref={containerRef}
-      className="relative w-full min-h-[90vh] md:min-h-screen pt-24 pb-12 px-6 flex flex-col md:flex-row items-center justify-center bg-[#ebe8dc] overflow-hidden"
+      className="relative w-full min-h-[90vh] md:min-h-screen pt-32 pb-12 bg-[#ebe8dc] overflow-hidden flex flex-col justify-center"
     >
       {/* Background Decorative Parallax Elements */}
       <motion.div 
@@ -84,16 +74,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
         M
       </motion.div>
       
-      {/* Text Content - Left Side with Subtle Parallax */}
-      <motion.div 
-        style={{ y: yText }}
-        className="w-full md:w-1/2 z-10 flex flex-col justify-center pr-0 md:pr-12 lg:pr-20 mb-12 md:mb-0"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full flex flex-col md:flex-row items-center justify-between relative z-10">
+        
+        {/* Text Content - Left Side with Subtle Parallax */}
+        <motion.div 
+          style={{ y: yText }}
+          className="w-full md:w-1/2 flex flex-col justify-center pr-0 md:pr-12 lg:pr-20 mb-12 md:mb-0"
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
           <div className="inline-block px-3.5 py-1.5 bg-[#8b261b]/10 text-[#8b261b] rounded-full border border-[#8b261b]/20 text-[10px] md:text-xs tracking-[0.2em] uppercase mb-6 font-bold">
             Praça de Alimentação • Shopping Água Verde
           </div>
@@ -111,14 +103,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <button
               onClick={onExploreMenu}
-              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-white bg-[#2c3522] px-8 py-4 rounded-full transition-all hover:bg-[#3d4a30] hover:shadow-lg w-max"
+              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-white bg-[#2c3522] px-8 py-4 rounded-full transition-all hover:bg-[#3d4a30] hover:shadow-lg w-max cursor-pointer"
             >
               <span>Ver o Cardápio</span>
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
             <button
               onClick={onGoToLocation}
-              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-[#161616] border border-[#161616] px-8 py-4 rounded-full transition-all hover:bg-[#161616] hover:text-white w-max"
+              className="group flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-[#161616] border border-[#161616] px-8 py-4 rounded-full transition-all hover:bg-[#161616] hover:text-white w-max cursor-pointer"
             >
               Como Chegar
             </button>
@@ -168,7 +160,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
               <button
                 onClick={handlePrev}
                 aria-label="Imagem anterior"
-                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors"
+                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <ChevronLeft size={16} />
               </button>
@@ -180,7 +172,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     aria-label={`Ir para imagem ${idx + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                       idx === currentIndex 
                         ? 'w-6 bg-[#e1ddcc]' 
                         : 'w-2 bg-white/40 hover:bg-white/70'
@@ -192,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
               <button
                 onClick={handleNext}
                 aria-label="Próxima imagem"
-                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors"
+                className="p-1.5 rounded-full hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <ChevronRight size={16} />
               </button>
@@ -202,6 +194,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
         </div>
       </motion.div>
 
+      </div>
     </section>
   );
 };
