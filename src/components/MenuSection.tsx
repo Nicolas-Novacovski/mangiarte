@@ -848,13 +848,13 @@ export const MenuSection: React.FC = () => {
                         <motion.div
                           key={`calzone-${idx}`}
                           whileHover={{ scale: 1.02, y: -2 }}
-                          className="p-3.5 rounded-xl bg-[#f4f3ef] border border-[#d6d2c4] flex justify-between items-center"
+                          className="p-3.5 rounded-xl bg-[#f4f3ef] border border-[#d6d2c4] flex justify-between items-center gap-3"
                         >
-                          <div>
+                          <div className="flex-1 min-w-0">
                             <h6 className="font-serif-cormorant text-lg text-[#161616] font-medium">{c.nome}</h6>
-                            <p className="text-xs text-stone-600">{c.descricao}</p>
+                            <p className="text-xs text-stone-600 leading-tight">{c.descricao}</p>
                           </div>
-                          <span className="font-sans-body text-sm font-bold text-[#2c3522]">R$ {c.preco}</span>
+                          <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {c.preco}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -895,14 +895,14 @@ export const MenuSection: React.FC = () => {
                               <img src={porcao.imagem} alt={porcao.nome} className="w-full h-full object-cover" />
                             </div>
                           )}
-                          <div className="flex-1 flex justify-between items-center">
-                            <div>
+                          <div className="flex-1 flex justify-between items-center gap-3">
+                            <div className="flex-1 min-w-0">
                               <span className="font-serif-cormorant text-base font-semibold text-[#161616] block">
                                 {porcao.nome}
                               </span>
-                              <span className="text-[10px] text-stone-500">{porcao.peso}</span>
+                              <span className="text-[10px] text-stone-500 block leading-tight">{porcao.peso}</span>
                             </div>
-                            <span className="text-xs font-bold text-[#2c3522]">R$ {porcao.preco}</span>
+                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {porcao.preco}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -919,11 +919,11 @@ export const MenuSection: React.FC = () => {
                           whileHover={{ scale: 1.02, y: -2 }}
                           className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[#8b261b] transition-all"
                         >
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="font-serif-cormorant text-base font-semibold text-[#161616]">{s.nome}</span>
-                            <span className="text-xs font-bold text-[#2c3522]">R$ {s.preco}</span>
+                          <div className="flex justify-between items-center mb-1 gap-3">
+                            <span className="font-serif-cormorant text-base font-semibold text-[#161616] truncate">{s.nome}</span>
+                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {s.preco}</span>
                           </div>
-                          <p className="text-[10px] text-stone-500">{s.descricao}</p>
+                          <p className="text-[10px] text-stone-500 leading-tight">{s.descricao}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -939,12 +939,12 @@ export const MenuSection: React.FC = () => {
                           whileHover={{ scale: 1.02, y: -2 }}
                           className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[#8b261b] transition-all"
                         >
-                          <div className="flex justify-between items-center">
-                            <div>
+                          <div className="flex justify-between items-center gap-3">
+                            <div className="flex-1 min-w-0">
                               <span className="font-serif-cormorant text-base font-semibold text-[#161616] block">{b.nome}</span>
-                              <span className="text-[10px] text-stone-500">{b.detalhe}</span>
+                              <span className="text-[10px] text-stone-500 block leading-tight">{b.detalhe}</span>
                             </div>
-                            <span className="text-xs font-bold text-[#2c3522] ml-2">R$ {b.preco}</span>
+                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0 ml-2">R$ {b.preco}</span>
                           </div>
                         </motion.div>
                       ))}
