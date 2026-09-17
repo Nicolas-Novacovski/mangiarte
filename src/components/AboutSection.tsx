@@ -104,20 +104,20 @@ export const GalleryAndHighlights: React.FC = () => {
   };
 
   return (
-    <section id="galeria" ref={sectionRef} className="py-20 md:py-24 bg-[#ebe8dc] overflow-hidden border-t border-[#d6d2c4] relative">
+    <section id="galeria" ref={sectionRef} className="py-20 md:py-24 bg-[var(--ivory)] overflow-hidden border-t border-[#d6d2c4] relative">
       {/* Background Parallax Subtle Ambient Shapes */}
       <motion.div 
         style={{ y: yBgDecor }}
         className="absolute inset-0 pointer-events-none select-none opacity-35"
       >
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[#8b261b]/10 to-transparent blur-3xl" />
-        <div className="absolute bottom-10 left-0 w-[450px] h-[450px] rounded-full bg-gradient-to-r from-[#2c3522]/10 to-transparent blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[var(--tomato)]/10 to-transparent blur-3xl" />
+        <div className="absolute bottom-10 left-0 w-[450px] h-[450px] rounded-full bg-gradient-to-r from-[var(--basil)]/10 to-transparent blur-3xl" />
       </motion.div>
 
       {/* Decorative typography parallax watermark */}
       <motion.div
         style={{ y: yDecorText }}
-        className="absolute right-10 bottom-1/4 pointer-events-none select-none hidden lg:block opacity-[0.03] text-[#161616] font-serif-cormorant text-[14rem] leading-none"
+        className="absolute right-10 bottom-1/4 pointer-events-none select-none hidden lg:block opacity-[0.03] text-[var(--espresso)] font-serif-cormorant text-[14rem] leading-none"
       >
         Sapori
       </motion.div>
@@ -130,17 +130,17 @@ export const GalleryAndHighlights: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-[11px] tracking-[0.25em] uppercase font-bold text-[#8b261b] block mb-3">
+          <span className="text-[11px] tracking-[0.25em] uppercase font-bold text-[var(--tomato)] block mb-3">
             Tradição & Praticidade
           </span>
-          <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl text-[#161616] leading-tight mb-12 max-w-3xl">
+          <h2 className="font-serif-cormorant text-3xl sm:text-4xl md:text-5xl text-[var(--espresso)] leading-tight mb-12 max-w-3xl">
             Culinária italiana saborosa no seu dia a dia.
-            <span className="italic text-[#8b261b] block mt-1">Na Praça de Alimentação do Shopping Água Verde.</span>
+            <span className="italic text-[var(--tomato)] block mt-1">Na Praça de Alimentação do Shopping Água Verde.</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 xl:gap-12 text-left">
             <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-[#d6d2c4]">
-              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] mb-3 border-b border-[#8b261b]/20 pb-2">
+              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-3 border-b border-[var(--tomato)]/20 pb-2">
                 Massas & Pratos
               </h3>
               <p className="text-stone-600 font-sans-body text-xs md:text-sm leading-relaxed">
@@ -148,7 +148,7 @@ export const GalleryAndHighlights: React.FC = () => {
               </p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-[#d6d2c4]">
-              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] mb-3 border-b border-[#8b261b]/20 pb-2">
+              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-3 border-b border-[var(--tomato)]/20 pb-2">
                 Bebidas & Vinhos
               </h3>
               <p className="text-stone-600 font-sans-body text-xs md:text-sm leading-relaxed">
@@ -156,7 +156,7 @@ export const GalleryAndHighlights: React.FC = () => {
               </p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-[#d6d2c4]">
-              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[#8b261b] mb-3 border-b border-[#8b261b]/20 pb-2">
+              <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-3 border-b border-[var(--tomato)]/20 pb-2">
                 Praça de Alimentação
               </h3>
               <p className="text-stone-600 font-sans-body text-xs md:text-sm leading-relaxed">
@@ -170,10 +170,10 @@ export const GalleryAndHighlights: React.FC = () => {
       {/* Carousel Header with Navigation Controls */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-6 sm:mb-8 flex items-end justify-between gap-4">
         <div>
-          <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#2c3522] block mb-1">
+          <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[var(--basil)] block mb-1">
             Galeria Gastronômica
           </span>
-          <h3 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl text-[#161616]">
+          <h3 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl text-[var(--espresso)]">
             Pratos & Momentos Mangiarte
           </h3>
         </div>
@@ -185,7 +185,7 @@ export const GalleryAndHighlights: React.FC = () => {
             disabled={!canScrollLeft}
             className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
               canScrollLeft
-                ? 'border-[#2c3522] bg-white text-[#2c3522] hover:bg-[#2c3522] hover:text-white shadow-sm active:scale-95'
+                ? 'border-[var(--basil)] bg-white text-[var(--basil)] hover:bg-[var(--basil)] hover:text-white shadow-sm active:scale-95'
                 : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
             }`}
             aria-label="Voltar prato anterior"
@@ -197,7 +197,7 @@ export const GalleryAndHighlights: React.FC = () => {
             disabled={!canScrollRight}
             className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
               canScrollRight
-                ? 'border-[#2c3522] bg-white text-[#2c3522] hover:bg-[#2c3522] hover:text-white shadow-sm active:scale-95'
+                ? 'border-[var(--basil)] bg-white text-[var(--basil)] hover:bg-[var(--basil)] hover:text-white shadow-sm active:scale-95'
                 : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
             }`}
             aria-label="Avançar próximo prato"
@@ -210,10 +210,10 @@ export const GalleryAndHighlights: React.FC = () => {
       {/* Smooth Horizontal Scrolling Carousel with Dishes Optimized for Mobile */}
       <div className="w-full max-w-[1400px] mx-auto relative">
         {/* Left Blur Overlay */}
-        <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-r from-[#ebe8dc] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_right,black,transparent)]" />
+        <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-r from-[var(--paper-white)] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_right,black,transparent)]" />
         
         {/* Right Blur Overlay */}
-        <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-l from-[#ebe8dc] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_left,black,transparent)]" />
+        <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-16 z-20 pointer-events-none bg-gradient-to-l from-[var(--paper-white)] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_left,black,transparent)]" />
         
         <div
           ref={scrollContainerRef}
@@ -235,7 +235,7 @@ export const GalleryAndHighlights: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
               onClick={() => handleCardClick(dish)}
-              className="w-[78vw] max-w-[310px] sm:w-[320px] md:w-[360px] h-[370px] sm:h-[410px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl relative bg-stone-900 group cursor-pointer snap-center sm:snap-start flex-shrink-0 border border-white/20 select-none transition-transform duration-300 active:scale-[0.99]"
+              className={`flex-shrink-0 group cursor-pointer snap-center sm:snap-start select-none transition-transform duration-300 active:scale-[0.99] rounded-sm overflow-hidden shadow-lg hover:shadow-2xl relative bg-stone-900 w-[75vw] sm:w-[360px] h-[440px]`}
             >
               <img
                 src={dish.imagem}
@@ -246,12 +246,12 @@ export const GalleryAndHighlights: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
 
               {/* Tag Superior */}
-              <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 flex items-center gap-2 z-10">
-                <span className="bg-[#2c3522]/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.18em] px-2.5 sm:px-3 py-1 rounded-full shadow-md border border-white/10">
+              <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+                <span className="bg-[var(--basil)]/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.18em] px-3 py-1 rounded-sm shadow-md border border-white/10 w-max">
                   {dish.categoria}
                 </span>
                 {dish.preco && (
-                  <span className="bg-[#8b261b] text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-md">
+                  <span className="bg-[var(--tomato)] text-white text-[10px] sm:text-[11px] font-bold px-3 py-0.5 rounded-sm shadow-md w-max">
                     {dish.preco}
                   </span>
                 )}
@@ -259,49 +259,28 @@ export const GalleryAndHighlights: React.FC = () => {
 
               {/* Botão de Zoom Indicativo */}
               <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 opacity-80 group-hover:opacity-100 transition-opacity z-10">
-                <div className="bg-black/40 backdrop-blur-md text-white p-1.5 sm:p-2 rounded-full border border-white/20">
+                <div className="bg-black/40 backdrop-blur-md text-white p-1.5 sm:p-2 rounded-full">
                   <Eye size={14} className="sm:w-4 sm:h-4" />
                 </div>
               </div>
 
               {/* Descrição Inferior */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 text-white z-10">
-                <h4 className="font-serif-cormorant text-xl sm:text-2xl md:text-3xl font-semibold mb-1 group-hover:text-[#e1ddcc] transition-colors leading-tight">
+                <h4 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 transition-colors leading-tight">
                   {dish.titulo}
                 </h4>
-                <p className="text-stone-300 text-xs font-sans-body leading-relaxed line-clamp-2 mb-2">
+                <p className="text-stone-300 text-sm font-sans-body leading-relaxed line-clamp-2 mb-3">
                   {dish.descricao}
                 </p>
-                <div className="flex items-center gap-1.5 text-[10px] tracking-wider uppercase font-bold text-[#e1ddcc]">
-                  <Utensils size={12} />
-                  <span>Toque para ver em tamanho real</span>
+                <div className="flex items-center gap-1.5 text-[10px] tracking-wider uppercase font-bold text-[var(--saffron)]">
+                  <span>Ampliar fotografia</span>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Indicadores de Posição (Dots interativos) & Dica de Deslize */}
-        <div className="mt-4 sm:mt-6 flex flex-col items-center gap-2.5 px-6">
-          <div className="flex items-center gap-1.5">
-            {carouselDishes.map((_, dotIdx) => (
-              <button
-                key={dotIdx}
-                onClick={() => scrollToDishIndex(dotIdx)}
-                aria-label={`Ir para prato ${dotIdx + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  dotIdx === activeDotIndex
-                    ? 'w-6 bg-[#8b261b]'
-                    : 'w-1.5 bg-[#8b261b]/25 hover:bg-[#8b261b]/50'
-                }`}
-              />
-            ))}
-          </div>
-
-          <div className="text-stone-500 text-[10px] tracking-widest uppercase font-semibold">
-            <span>&larr; Deslize para explorar fotos dos pratos &rarr;</span>
-          </div>
-        </div>
+        
       </div>
 
       {/* Lightbox Modal para o Prato do Carrossel */}
@@ -319,15 +298,15 @@ export const GalleryAndHighlights: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.94, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#f4f3ef] text-[#161616] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
+              className="bg-[var(--paper-white)] text-[var(--espresso)] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
             >
-              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[#ebe8dc]">
-                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#8b261b]">
+              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[var(--ivory)]">
+                <span className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--tomato)]">
                   {activeModalDish.categoria}
                 </span>
                 <button
                   onClick={() => setActiveModalDish(null)}
-                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[#161616] transition-colors cursor-pointer"
+                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[var(--espresso)] transition-colors cursor-pointer"
                   aria-label="Fechar modal"
                 >
                   <X size={18} />
@@ -342,14 +321,14 @@ export const GalleryAndHighlights: React.FC = () => {
                 />
               </div>
 
-              <div className="p-4 sm:p-6 bg-[#f4f3ef] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="p-4 sm:p-6 bg-[var(--paper-white)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                   <div className="flex items-center gap-2.5 mb-1">
-                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[#161616] font-semibold">
+                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[var(--espresso)] font-semibold">
                       {activeModalDish.titulo}
                     </h4>
                     {activeModalDish.preco && (
-                      <span className="text-xs sm:text-sm font-bold text-white bg-[#8b261b] px-2.5 py-0.5 rounded-full">
+                      <span className="text-xs sm:text-sm font-bold text-white bg-[var(--tomato)] px-2.5 py-0.5 rounded-full">
                         {activeModalDish.preco}
                       </span>
                     )}
@@ -364,7 +343,7 @@ export const GalleryAndHighlights: React.FC = () => {
                     setActiveModalDish(null);
                     handleScrollToMenu();
                   }}
-                  className="w-full sm:w-auto shrink-0 bg-[#8b261b] hover:bg-[#a32e21] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-colors text-center cursor-pointer"
+                  className="w-full sm:w-auto shrink-0 bg-[var(--tomato)] hover:bg-[#a32e21] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-colors text-center cursor-pointer"
                 >
                   Ver no Menu
                 </button>

@@ -2,16 +2,18 @@
 
 @layer base {
   :root {
-    --bg-oyster: #f4f3ef;
-    --text-charcoal: #161616;
-    --accent-olive: #2c3522;
-    --border-taupe: #d6d2c4;
+    --ivory: #f2ebdd;
+    --basil: #173f2a;
+    --tomato: #b9342b;
+    --espresso: #1b1714;
+    --saffron: #d9a52c;
+    --paper-white: #fffaf0;
   }
-
+  
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    color: var(--text-charcoal);
-    background-color: var(--bg-oyster);
+    color: var(--espresso);
+    background-color: var(--ivory);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -33,22 +35,38 @@
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
+.font-display {
+  font-family: 'Oswald', sans-serif;
+}
+
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-oyster);
+  background: var(--ivory);
 }
 ::-webkit-scrollbar-thumb {
   background: #c0bcb0;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-charcoal);
+  background: var(--espresso);
 }
 
 ::selection {
-  background-color: var(--accent-olive);
+  background-color: var(--tomato);
   color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }

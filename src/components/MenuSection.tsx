@@ -39,20 +39,20 @@ export const MenuSection: React.FC = () => {
   const yDecorText = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="menu" ref={sectionRef} className="py-24 bg-[#ebe8dc] border-t border-[#d6d2c4] relative overflow-hidden">
+    <section id="menu" ref={sectionRef} className="py-24 bg-[var(--ivory)] border-t border-[#d6d2c4] relative overflow-hidden">
       {/* Background Parallax Subtle Layers */}
       <motion.div 
         style={{ y: yBgDecor }}
         className="absolute inset-0 pointer-events-none select-none opacity-30"
       >
-        <div className="absolute top-1/3 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-[#8b261b]/10 to-transparent blur-3xl" />
-        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[#2c3522]/10 to-transparent blur-3xl" />
+        <div className="absolute top-1/3 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-[var(--tomato)]/10 to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[var(--basil)]/10 to-transparent blur-3xl" />
       </motion.div>
 
       {/* Decorative typography watermark with parallax */}
       <motion.div
         style={{ y: yDecorText }}
-        className="absolute left-10 bottom-20 pointer-events-none select-none hidden lg:block opacity-[0.03] text-[#161616] font-serif-cormorant text-[15rem] leading-none"
+        className="absolute left-10 bottom-20 pointer-events-none select-none hidden lg:block opacity-[0.03] text-[var(--espresso)] font-serif-cormorant text-[15rem] leading-none"
       >
         Menu
       </motion.div>
@@ -67,10 +67,10 @@ export const MenuSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-left mb-12"
         >
-          <span className="text-[11px] tracking-[0.3em] uppercase text-[#8b261b] font-bold mb-3 block">
+          <span className="text-[11px] tracking-[0.3em] uppercase text-[var(--tomato)] font-bold mb-3 block">
             Cucina Italiana Tradizionale
           </span>
-          <h2 className="font-serif-cormorant text-5xl md:text-6xl text-[#161616]">
+          <h2 className="font-serif-cormorant text-5xl md:text-6xl text-[var(--espresso)]">
             Nossos Cardápios
           </h2>
           <p className="text-stone-600 font-sans-body text-sm max-w-xl mt-3">
@@ -84,12 +84,12 @@ export const MenuSection: React.FC = () => {
             onClick={() => setActiveMenuTab('executivo')}
             className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
               activeMenuTab === 'executivo'
-                ? 'bg-[#2c3522] text-white border-[#2c3522] shadow-lg scale-100 ring-2 ring-[#2c3522]/20'
-                : 'bg-[#f4f3ef] text-[#2c3522] border-[#d6d2c4] hover:bg-[#eae6d8]'
+                ? 'bg-[var(--basil)] text-white border-[var(--basil)] shadow-lg scale-100 ring-2 ring-[var(--basil)]/20'
+                : 'bg-[var(--paper-white)] text-[var(--basil)] border-[#d6d2c4] hover:bg-[#eae6d8]'
             }`}
           >
             <div className="flex items-center gap-2">
-              <Calendar size={15} className={activeMenuTab === 'executivo' ? 'text-[#e1ddcc]' : 'text-[#8b261b]'} />
+              <Calendar size={15} className={activeMenuTab === 'executivo' ? 'text-[#e1ddcc]' : 'text-[var(--tomato)]'} />
               <span className="text-sm">Almoço Executivo</span>
             </div>
             <span className={`text-[10px] font-normal tracking-wider lowercase ${activeMenuTab === 'executivo' ? 'text-[#d6d2c4]' : 'text-stone-500'}`}>
@@ -101,12 +101,12 @@ export const MenuSection: React.FC = () => {
             onClick={() => setActiveMenuTab('geral')}
             className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
               activeMenuTab === 'geral'
-                ? 'bg-[#8b261b] text-white border-[#8b261b] shadow-lg scale-100 ring-2 ring-[#8b261b]/20'
-                : 'bg-[#f4f3ef] text-[#161616] border-[#d6d2c4] hover:bg-[#eae6d8]'
+                ? 'bg-[var(--tomato)] text-white border-[var(--tomato)] shadow-lg scale-100 ring-2 ring-[var(--tomato)]/20'
+                : 'bg-[var(--paper-white)] text-[var(--espresso)] border-[#d6d2c4] hover:bg-[#eae6d8]'
             }`}
           >
             <div className="flex items-center gap-2">
-              <UtensilsCrossed size={15} className={activeMenuTab === 'geral' ? 'text-white' : 'text-[#8b261b]'} />
+              <UtensilsCrossed size={15} className={activeMenuTab === 'geral' ? 'text-white' : 'text-[var(--tomato)]'} />
               <span className="text-sm">Cardápio Geral</span>
             </div>
             <span className={`text-[10px] font-normal tracking-wider lowercase ${activeMenuTab === 'geral' ? 'text-stone-200' : 'text-stone-500'}`}>
@@ -127,13 +127,13 @@ export const MenuSection: React.FC = () => {
               className="bg-[#f9f8f5] border-2 border-[#d6d2c4] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden"
             >
               {/* Top Banner do Menu Executivo */}
-              <div className="border-b-2 border-[#8b261b]/30 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="border-b-2 border-[var(--tomato)]/30 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
-                  <div className="flex items-center gap-2 text-[#8b261b] text-xs uppercase tracking-[0.2em] font-bold mb-1">
+                  <div className="flex items-center gap-2 text-[var(--tomato)] text-xs uppercase tracking-[0.2em] font-bold mb-1">
                     <Sparkles size={14} />
                     <span>Cardápio da Semana</span>
                   </div>
-                  <h3 className="font-serif-cormorant text-3xl md:text-5xl text-[#161616]">
+                  <h3 className="font-serif-cormorant text-3xl md:text-5xl text-[var(--espresso)]">
                     Menu Executivo da Semana
                   </h3>
                   <p className="text-stone-600 font-sans-body text-xs md:text-sm mt-1">
@@ -142,12 +142,12 @@ export const MenuSection: React.FC = () => {
                 </div>
                 
                 <div className="flex items-center gap-3 shrink-0">
-                  <div className="bg-[#2c3522] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md">
+                  <div className="bg-[var(--basil)] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md">
                     A partir de R$ 28
                   </div>
                   <button
                     onClick={() => setShowFlyerModal(true)}
-                    className="cursor-pointer text-[11px] font-bold tracking-wider uppercase text-[#8b261b] border border-[#8b261b] hover:bg-[#8b261b] hover:text-white px-4 py-2.5 rounded-full transition-all duration-300"
+                    className="cursor-pointer text-[11px] font-bold tracking-wider uppercase text-[var(--tomato)] border border-[var(--tomato)] hover:bg-[var(--tomato)] hover:text-white px-4 py-2.5 rounded-full transition-all duration-300"
                   >
                     Ver Panfleto Oficial
                   </button>
@@ -163,7 +163,7 @@ export const MenuSection: React.FC = () => {
                 {/* Lado Esquerdo: Segunda, Terça e Quarta */}
                 <div className="space-y-8 pr-0 md:pr-4">
                   <div className="text-center pb-2 border-b border-[#d6d2c4]">
-                    <span className="text-[11px] font-bold tracking-[0.25em] text-[#2c3522] uppercase">
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-[var(--basil)] uppercase">
                       Página 1 • Início da Semana
                     </span>
                   </div>
@@ -172,10 +172,10 @@ export const MenuSection: React.FC = () => {
                     <div key={diaItem.dia} className="space-y-4">
                       {/* Cabeçalho do Dia */}
                       <div className="flex items-center gap-3">
-                        <span className="bg-[#8b261b] text-white font-serif-cormorant text-xl font-bold px-3 py-1 rounded-md shadow-sm">
+                        <span className="bg-[var(--tomato)] text-white font-serif-cormorant text-xl font-bold px-3 py-1 rounded-md shadow-sm">
                           {diaItem.dia}
                         </span>
-                        <h4 className="font-serif-cormorant text-2xl text-[#161616] font-semibold">
+                        <h4 className="font-serif-cormorant text-2xl text-[var(--espresso)] font-semibold">
                           {diaItem.diaExtenso}
                         </h4>
                       </div>
@@ -198,12 +198,12 @@ export const MenuSection: React.FC = () => {
                                 });
                               }
                             }}
-                            className={`p-4 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-lg transition-all duration-200 group flex gap-4 items-center ${
+                            className={`p-4 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-lg transition-all duration-200 group flex gap-4 items-center ${
                               prato.imagem ? 'cursor-pointer' : 'cursor-default'
                             }`}
                           >
                             {prato.imagem && (
-                              <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                              <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                                 <img
                                   src={prato.imagem}
                                   alt={prato.nome}
@@ -218,22 +218,22 @@ export const MenuSection: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className="flex justify-between items-start gap-3 mb-1">
                                 <div className="flex items-center gap-2 flex-wrap">
-                                  <h5 className="font-serif-cormorant text-xl text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                  <h5 className="font-serif-cormorant text-xl text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                     {prato.nome}
                                   </h5>
                                   {prato.tag && (
-                                    <span className="text-[9px] font-bold uppercase tracking-wider bg-[#8b261b]/10 text-[#8b261b] px-2 py-0.5 rounded-full">
+                                    <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--tomato)]/10 text-[var(--tomato)] px-2 py-0.5 rounded-full">
                                       {prato.tag}
                                     </span>
                                   )}
                                   {prato.imagem && (
-                                    <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-2 py-0.5 rounded-full">
+                                    <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-2 py-0.5 rounded-full">
                                       <ImageIcon size={10} />
                                       <span>Foto</span>
                                     </span>
                                   )}
                                 </div>
-                                <span className="font-sans-body text-base font-bold text-[#2c3522] whitespace-nowrap">
+                                <span className="font-sans-body text-base font-bold text-[var(--basil)] whitespace-nowrap">
                                   R$ {prato.preco}
                                 </span>
                               </div>
@@ -251,7 +251,7 @@ export const MenuSection: React.FC = () => {
                 {/* Lado Direito: Quinta, Sexta e Destaques */}
                 <div className="space-y-8 pl-0 md:pl-4">
                   <div className="text-center pb-2 border-b border-[#d6d2c4]">
-                    <span className="text-[11px] font-bold tracking-[0.25em] text-[#2c3522] uppercase">
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-[var(--basil)] uppercase">
                       Página 2 • Fim da Semana & Especiais
                     </span>
                   </div>
@@ -260,10 +260,10 @@ export const MenuSection: React.FC = () => {
                     <div key={diaItem.dia} className="space-y-4">
                       {/* Cabeçalho do Dia */}
                       <div className="flex items-center gap-3">
-                        <span className="bg-[#8b261b] text-white font-serif-cormorant text-xl font-bold px-3 py-1 rounded-md shadow-sm">
+                        <span className="bg-[var(--tomato)] text-white font-serif-cormorant text-xl font-bold px-3 py-1 rounded-md shadow-sm">
                           {diaItem.dia}
                         </span>
-                        <h4 className="font-serif-cormorant text-2xl text-[#161616] font-semibold">
+                        <h4 className="font-serif-cormorant text-2xl text-[var(--espresso)] font-semibold">
                           {diaItem.diaExtenso}
                         </h4>
                       </div>
@@ -286,12 +286,12 @@ export const MenuSection: React.FC = () => {
                                 });
                               }
                             }}
-                            className={`p-4 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-lg transition-all duration-200 group flex gap-4 items-center ${
+                            className={`p-4 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-lg transition-all duration-200 group flex gap-4 items-center ${
                               prato.imagem ? 'cursor-pointer' : 'cursor-default'
                             }`}
                           >
                             {prato.imagem && (
-                              <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                              <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                                 <img
                                   src={prato.imagem}
                                   alt={prato.nome}
@@ -306,22 +306,22 @@ export const MenuSection: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className="flex justify-between items-start gap-3 mb-1">
                                 <div className="flex items-center gap-2 flex-wrap">
-                                  <h5 className="font-serif-cormorant text-xl text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                  <h5 className="font-serif-cormorant text-xl text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                     {prato.nome}
                                   </h5>
                                   {prato.tag && (
-                                    <span className="text-[9px] font-bold uppercase tracking-wider bg-[#2c3522]/10 text-[#2c3522] px-2 py-0.5 rounded-full">
+                                    <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--basil)]/10 text-[var(--basil)] px-2 py-0.5 rounded-full">
                                       {prato.tag}
                                     </span>
                                   )}
                                   {prato.imagem && (
-                                    <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-2 py-0.5 rounded-full">
+                                    <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-2 py-0.5 rounded-full">
                                       <ImageIcon size={10} />
                                       <span>Foto</span>
                                     </span>
                                   )}
                                 </div>
-                                <span className="font-sans-body text-base font-bold text-[#2c3522] whitespace-nowrap">
+                                <span className="font-sans-body text-base font-bold text-[var(--basil)] whitespace-nowrap">
                                   R$ {prato.preco}
                                 </span>
                               </div>
@@ -338,7 +338,7 @@ export const MenuSection: React.FC = () => {
                   {/* Card Editorial de Destaque Italiano */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="p-6 rounded-xl bg-[#2c3522] text-[#f4f3ef] shadow-md border border-[#2c3522] relative overflow-hidden"
+                    className="p-6 rounded-xl bg-[var(--basil)] text-[var(--paper-white)] shadow-md border border-[var(--basil)] relative overflow-hidden"
                   >
                     <div className="relative z-10">
                       <span className="text-[10px] tracking-[0.2em] uppercase text-[#e1ddcc] font-bold block mb-1">
@@ -368,13 +368,13 @@ export const MenuSection: React.FC = () => {
               className="bg-[#f9f8f5] border-2 border-[#d6d2c4] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden"
             >
               {/* Top Banner do Cardápio Geral */}
-              <div className="border-b-2 border-[#2c3522]/20 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="border-b-2 border-[var(--basil)]/20 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
-                  <div className="flex items-center gap-2 text-[#2c3522] text-xs uppercase tracking-[0.2em] font-bold mb-1">
+                  <div className="flex items-center gap-2 text-[var(--basil)] text-xs uppercase tracking-[0.2em] font-bold mb-1">
                     <UtensilsCrossed size={14} />
                     <span>Cardápio Completo À La Carte</span>
                   </div>
-                  <h3 className="font-serif-cormorant text-3xl md:text-5xl text-[#161616]">
+                  <h3 className="font-serif-cormorant text-3xl md:text-5xl text-[var(--espresso)]">
                     Mangiarte Cucina Italiana
                   </h3>
                   <p className="text-stone-600 font-sans-body text-xs md:text-sm mt-1">
@@ -382,7 +382,7 @@ export const MenuSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#8b261b] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md shrink-0">
+                <div className="bg-[var(--tomato)] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md shrink-0">
                   Massas, Carnes, Risotos & Vinhos
                 </div>
               </div>
@@ -398,18 +398,18 @@ export const MenuSection: React.FC = () => {
                   
                   {/* SEÇÃO 1: SUGESTÕES DO CHEF */}
                   <div>
-                    <div className="border-b-2 border-[#8b261b] pb-2 mb-6 flex justify-between items-baseline">
-                      <h4 className="font-serif-cormorant text-3xl text-[#161616] font-bold">
+                    <div className="border-b-2 border-[var(--tomato)] pb-2 mb-6 flex justify-between items-baseline">
+                      <h4 className="font-serif-cormorant text-3xl text-[var(--espresso)] font-bold">
                         Sugestões do Chef
                       </h4>
-                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#8b261b]">
+                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[var(--tomato)]">
                         Especialidades
                       </span>
                     </div>
 
                     {/* Sub-bloco: Frango */}
                     <div className="mb-6">
-                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2c3522] bg-[#2c3522]/10 px-3 py-1 rounded inline-block mb-3">
+                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-3 py-1 rounded inline-block mb-3">
                         Frango
                       </h5>
                       <div className="space-y-3">
@@ -428,12 +428,12 @@ export const MenuSection: React.FC = () => {
                                 });
                               }
                             }}
-                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
+                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
                               item.imagem ? 'cursor-pointer' : 'cursor-default'
                             }`}
                           >
                             {item.imagem && (
-                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                                 <img
                                   src={item.imagem}
                                   alt={item.nome}
@@ -448,17 +448,17 @@ export const MenuSection: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className="flex justify-between items-start gap-4 mb-1">
                                 <div className="flex items-center gap-1.5 flex-wrap">
-                                  <h6 className="font-serif-cormorant text-xl text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                  <h6 className="font-serif-cormorant text-xl text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                     {item.nome}
                                   </h6>
                                   {item.imagem && (
-                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-1.5 py-0.5 rounded">
+                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-1.5 py-0.5 rounded">
                                       <ImageIcon size={9} />
                                       <span>Ver foto</span>
                                     </span>
                                   )}
                                 </div>
-                                <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                                <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                                   R$ {item.preco}
                                 </span>
                               </div>
@@ -473,7 +473,7 @@ export const MenuSection: React.FC = () => {
 
                     {/* Sub-bloco: Bovino */}
                     <div className="mb-6">
-                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2c3522] bg-[#2c3522]/10 px-3 py-1 rounded inline-block mb-3">
+                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-3 py-1 rounded inline-block mb-3">
                         Bovino
                       </h5>
                       <div className="space-y-3">
@@ -492,12 +492,12 @@ export const MenuSection: React.FC = () => {
                                 });
                               }
                             }}
-                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
+                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
                               item.imagem ? 'cursor-pointer' : 'cursor-default'
                             }`}
                           >
                             {item.imagem && (
-                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                                 <img
                                   src={item.imagem}
                                   alt={item.nome}
@@ -512,17 +512,17 @@ export const MenuSection: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className="flex justify-between items-start gap-4 mb-1">
                                 <div className="flex items-center gap-1.5 flex-wrap">
-                                  <h6 className="font-serif-cormorant text-xl text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                  <h6 className="font-serif-cormorant text-xl text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                     {item.nome}
                                   </h6>
                                   {item.imagem && (
-                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-1.5 py-0.5 rounded">
+                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-1.5 py-0.5 rounded">
                                       <ImageIcon size={9} />
                                       <span>Ver foto</span>
                                     </span>
                                   )}
                                 </div>
-                                <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                                <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                                   R$ {item.preco}
                                 </span>
                               </div>
@@ -537,7 +537,7 @@ export const MenuSection: React.FC = () => {
 
                     {/* Sub-bloco: Del Mare */}
                     <div>
-                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2c3522] bg-[#2c3522]/10 px-3 py-1 rounded inline-block mb-3">
+                      <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-3 py-1 rounded inline-block mb-3">
                         Del Mare
                       </h5>
                       <div className="space-y-3">
@@ -556,12 +556,12 @@ export const MenuSection: React.FC = () => {
                                 });
                               }
                             }}
-                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
+                            className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
                               item.imagem ? 'cursor-pointer' : 'cursor-default'
                             }`}
                           >
                             {item.imagem && (
-                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                                 <img
                                   src={item.imagem}
                                   alt={item.nome}
@@ -576,17 +576,17 @@ export const MenuSection: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className="flex justify-between items-start gap-4 mb-1">
                                 <div className="flex items-center gap-1.5 flex-wrap">
-                                  <h6 className="font-serif-cormorant text-xl text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                  <h6 className="font-serif-cormorant text-xl text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                     {item.nome}
                                   </h6>
                                   {item.imagem && (
-                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-1.5 py-0.5 rounded">
+                                    <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-1.5 py-0.5 rounded">
                                       <ImageIcon size={9} />
                                       <span>Ver foto</span>
                                     </span>
                                   )}
                                 </div>
-                                <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                                <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                                   R$ {item.preco}
                                 </span>
                               </div>
@@ -602,11 +602,11 @@ export const MenuSection: React.FC = () => {
 
                   {/* SEÇÃO 2: RISOTOS COM FOTOS */}
                   <div>
-                    <div className="border-b-2 border-[#8b261b] pb-2 mb-6 flex justify-between items-baseline">
-                      <h4 className="font-serif-cormorant text-3xl text-[#161616] font-bold">
+                    <div className="border-b-2 border-[var(--tomato)] pb-2 mb-6 flex justify-between items-baseline">
+                      <h4 className="font-serif-cormorant text-3xl text-[var(--espresso)] font-bold">
                         Risotos Selecionados
                       </h4>
-                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#8b261b]">
+                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[var(--tomato)]">
                         Arroz Arbóreo
                       </span>
                     </div>
@@ -627,12 +627,12 @@ export const MenuSection: React.FC = () => {
                               });
                             }
                           }}
-                          className={`p-3 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
+                          className={`p-3 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
                             risoto.imagem ? 'cursor-pointer' : 'cursor-default'
                           }`}
                         >
                           {risoto.imagem && (
-                            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                               <img
                                 src={risoto.imagem}
                                 alt={risoto.nome}
@@ -647,14 +647,14 @@ export const MenuSection: React.FC = () => {
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-center gap-4">
                               <div>
-                                <h6 className="font-serif-cormorant text-lg text-[#161616] group-hover:text-[#8b261b] transition-colors font-semibold">
+                                <h6 className="font-serif-cormorant text-lg text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-semibold">
                                   {risoto.nome}
                                 </h6>
                                 <p className="font-sans-body text-xs text-stone-500">
                                   {risoto.descricao}
                                 </p>
                               </div>
-                              <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                              <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                                 R$ {risoto.preco}
                               </span>
                             </div>
@@ -671,7 +671,7 @@ export const MenuSection: React.FC = () => {
                   {/* SEÇÃO 3: MONTE SUA MASSA (Destaque Interativo) */}
                   <motion.div 
                     whileHover={{ scale: 1.015 }}
-                    className="bg-gradient-to-br from-[#2c3522] to-[#1c2316] text-[#f4f3ef] p-6 sm:p-8 rounded-2xl shadow-xl border border-[#2c3522] relative overflow-hidden"
+                    className="bg-gradient-to-br from-[var(--basil)] to-[#1c2316] text-[var(--paper-white)] p-6 sm:p-8 rounded-2xl shadow-xl border border-[var(--basil)] relative overflow-hidden"
                   >
                     <div className="flex justify-between items-start gap-4 mb-4 border-b border-white/20 pb-3">
                       <div>
@@ -682,7 +682,7 @@ export const MenuSection: React.FC = () => {
                           Monte Sua Massa
                         </h4>
                       </div>
-                      <div className="bg-[#8b261b] text-white px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap">
+                      <div className="bg-[var(--tomato)] text-white px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap">
                         R$ {cardapioGeral.monteSuaMassa.precoBase}
                       </div>
                     </div>
@@ -697,12 +697,12 @@ export const MenuSection: React.FC = () => {
                         <span className="font-bold text-[#e1ddcc] uppercase tracking-wider block mb-1">
                           1. Escolha sua Massa:
                         </span>
-                        <div className="flex flex-wrap gap-2 text-[#f4f3ef]">
+                        <div className="flex flex-wrap gap-2 text-[var(--paper-white)]">
                           {cardapioGeral.monteSuaMassa.massas.map(m => (
                             <span key={m} className="bg-white/10 px-2.5 py-1 rounded-md">{m}</span>
                           ))}
                           {cardapioGeral.monteSuaMassa.massasRecheadas.map(mr => (
-                            <span key={mr.nome} className="bg-[#8b261b]/40 border border-[#8b261b] px-2.5 py-1 rounded-md">
+                            <span key={mr.nome} className="bg-[var(--tomato)]/40 border border-[var(--tomato)] px-2.5 py-1 rounded-md">
                               {mr.nome} ({mr.extra})
                             </span>
                           ))}
@@ -714,12 +714,12 @@ export const MenuSection: React.FC = () => {
                         <span className="font-bold text-[#e1ddcc] uppercase tracking-wider block mb-1">
                           2. Escolha seu Molho:
                         </span>
-                        <div className="flex flex-wrap gap-2 text-[#f4f3ef]">
+                        <div className="flex flex-wrap gap-2 text-[var(--paper-white)]">
                           {cardapioGeral.monteSuaMassa.molhos.map(molho => (
                             <span key={molho} className="bg-white/10 px-2 py-0.5 rounded">{molho}</span>
                           ))}
                           {cardapioGeral.monteSuaMassa.molhosEspeciais.map(me => (
-                            <span key={me.nome} className="bg-[#8b261b]/40 border border-[#8b261b] px-2 py-0.5 rounded">
+                            <span key={me.nome} className="bg-[var(--tomato)]/40 border border-[var(--tomato)] px-2 py-0.5 rounded">
                               {me.nome} ({me.extra})
                             </span>
                           ))}
@@ -757,11 +757,11 @@ export const MenuSection: React.FC = () => {
 
                   {/* SEÇÃO 4: PANINIS, TOASTS & CALZONES */}
                   <div>
-                    <div className="border-b-2 border-[#8b261b] pb-2 mb-6 flex justify-between items-baseline">
-                      <h4 className="font-serif-cormorant text-3xl text-[#161616] font-bold">
+                    <div className="border-b-2 border-[var(--tomato)] pb-2 mb-6 flex justify-between items-baseline">
+                      <h4 className="font-serif-cormorant text-3xl text-[var(--espresso)] font-bold">
                         Paninis & Toasts
                       </h4>
-                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#8b261b]">
+                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[var(--tomato)]">
                         Fermentação Natural ou Croissant
                       </span>
                     </div>
@@ -782,12 +782,12 @@ export const MenuSection: React.FC = () => {
                               });
                             }
                           }}
-                          className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
+                          className={`p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 group flex gap-3.5 items-center ${
                             item.imagem ? 'cursor-pointer' : 'cursor-default'
                           }`}
                         >
                           {item.imagem && (
-                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[#8b261b] transition-colors">
+                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 bg-stone-100 border border-stone-200 group-hover:border-[var(--tomato)] transition-colors">
                               <img
                                 src={item.imagem}
                                 alt={item.nome}
@@ -802,17 +802,17 @@ export const MenuSection: React.FC = () => {
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-start gap-4 mb-1">
                               <div className="flex items-center gap-1.5 flex-wrap">
-                                <h6 className="font-serif-cormorant text-lg text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                                <h6 className="font-serif-cormorant text-lg text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                                   {item.nome}
                                 </h6>
                                 {item.imagem && (
-                                  <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[#2c3522] bg-[#2c3522]/10 px-1.5 py-0.5 rounded">
+                                  <span className="inline-flex items-center gap-1 text-[8px] font-bold text-[var(--basil)] bg-[var(--basil)]/10 px-1.5 py-0.5 rounded">
                                     <ImageIcon size={9} />
                                     <span>Ver foto</span>
                                   </span>
                                 )}
                               </div>
-                              <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                              <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                                 R$ {item.preco}
                               </span>
                             </div>
@@ -828,13 +828,13 @@ export const MenuSection: React.FC = () => {
                           key={`toast-${idx}`}
                           whileHover={{ scale: 1.02, y: -2 }}
                           transition={{ duration: 0.2, ease: "easeOut" }}
-                          className="p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[#8b261b] hover:shadow-md transition-all duration-200 cursor-default group"
+                          className="p-3.5 rounded-xl bg-white border border-[#e2dec9] hover:border-[var(--tomato)] hover:shadow-md transition-all duration-200 cursor-default group"
                         >
                           <div className="flex justify-between items-start gap-4 mb-1">
-                            <h6 className="font-serif-cormorant text-lg text-[#161616] group-hover:text-[#8b261b] transition-colors font-medium">
+                            <h6 className="font-serif-cormorant text-lg text-[var(--espresso)] group-hover:text-[var(--tomato)] transition-colors font-medium">
                               {toast.nome}
                             </h6>
-                            <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap">
+                            <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap">
                               R$ {toast.preco}
                             </span>
                           </div>
@@ -848,13 +848,13 @@ export const MenuSection: React.FC = () => {
                         <motion.div
                           key={`calzone-${idx}`}
                           whileHover={{ scale: 1.02, y: -2 }}
-                          className="p-3.5 rounded-xl bg-[#f4f3ef] border border-[#d6d2c4] flex justify-between items-center gap-3"
+                          className="p-3.5 rounded-xl bg-[var(--paper-white)] border border-[#d6d2c4] flex justify-between items-center gap-3"
                         >
                           <div className="flex-1 min-w-0">
-                            <h6 className="font-serif-cormorant text-lg text-[#161616] font-medium">{c.nome}</h6>
+                            <h6 className="font-serif-cormorant text-lg text-[var(--espresso)] font-medium">{c.nome}</h6>
                             <p className="text-xs text-stone-600 leading-tight">{c.descricao}</p>
                           </div>
-                          <span className="font-sans-body text-sm font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {c.preco}</span>
+                          <span className="font-sans-body text-sm font-bold text-[var(--basil)] whitespace-nowrap shrink-0">R$ {c.preco}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -862,11 +862,11 @@ export const MenuSection: React.FC = () => {
 
                   {/* SEÇÃO 5: PORÇÕES, SOBREMESAS & BEBIDAS */}
                   <div>
-                    <div className="border-b-2 border-[#8b261b] pb-2 mb-6 flex justify-between items-baseline">
-                      <h4 className="font-serif-cormorant text-3xl text-[#161616] font-bold">
+                    <div className="border-b-2 border-[var(--tomato)] pb-2 mb-6 flex justify-between items-baseline">
+                      <h4 className="font-serif-cormorant text-3xl text-[var(--espresso)] font-bold">
                         Porções, Sobremesas & Vinhos
                       </h4>
-                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#8b261b]">
+                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[var(--tomato)]">
                         Finalização
                       </span>
                     </div>
@@ -886,7 +886,7 @@ export const MenuSection: React.FC = () => {
                               });
                             }
                           }}
-                          className={`p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[#8b261b] transition-all flex items-center gap-3 ${
+                          className={`p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[var(--tomato)] transition-all flex items-center gap-3 ${
                             porcao.imagem ? 'cursor-pointer' : 'cursor-default'
                           }`}
                         >
@@ -897,19 +897,19 @@ export const MenuSection: React.FC = () => {
                           )}
                           <div className="flex-1 flex justify-between items-center gap-3">
                             <div className="flex-1 min-w-0">
-                              <span className="font-serif-cormorant text-base font-semibold text-[#161616] block">
+                              <span className="font-serif-cormorant text-base font-semibold text-[var(--espresso)] block">
                                 {porcao.nome}
                               </span>
                               <span className="text-[10px] text-stone-500 block leading-tight">{porcao.peso}</span>
                             </div>
-                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {porcao.preco}</span>
+                            <span className="text-xs font-bold text-[var(--basil)] whitespace-nowrap shrink-0">R$ {porcao.preco}</span>
                           </div>
                         </motion.div>
                       ))}
                     </div>
 
                     {/* Sobremesas */}
-                    <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[#8b261b] mb-3">
+                    <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--tomato)] mb-3">
                       Dolci (Sobremesas)
                     </h5>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
@@ -917,11 +917,11 @@ export const MenuSection: React.FC = () => {
                         <motion.div
                           key={idx}
                           whileHover={{ scale: 1.02, y: -2 }}
-                          className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[#8b261b] transition-all"
+                          className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[var(--tomato)] transition-all"
                         >
                           <div className="flex justify-between items-center mb-1 gap-3">
-                            <span className="font-serif-cormorant text-base font-semibold text-[#161616] truncate">{s.nome}</span>
-                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0">R$ {s.preco}</span>
+                            <span className="font-serif-cormorant text-base font-semibold text-[var(--espresso)] truncate">{s.nome}</span>
+                            <span className="text-xs font-bold text-[var(--basil)] whitespace-nowrap shrink-0">R$ {s.preco}</span>
                           </div>
                           <p className="text-[10px] text-stone-500 leading-tight">{s.descricao}</p>
                         </motion.div>
@@ -929,7 +929,7 @@ export const MenuSection: React.FC = () => {
                     </div>
 
                     {/* Bebidas e Vinhos */}
-                    <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2c3522] mb-3">
+                    <h5 className="text-xs uppercase tracking-[0.2em] font-bold text-[var(--basil)] mb-3">
                       Vinhos & Bebidas
                     </h5>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -937,14 +937,14 @@ export const MenuSection: React.FC = () => {
                         <motion.div
                           key={idx}
                           whileHover={{ scale: 1.02, y: -2 }}
-                          className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[#8b261b] transition-all"
+                          className="p-3 bg-white rounded-xl border border-[#e2dec9] hover:border-[var(--tomato)] transition-all"
                         >
                           <div className="flex justify-between items-center gap-3">
                             <div className="flex-1 min-w-0">
-                              <span className="font-serif-cormorant text-base font-semibold text-[#161616] block">{b.nome}</span>
+                              <span className="font-serif-cormorant text-base font-semibold text-[var(--espresso)] block">{b.nome}</span>
                               <span className="text-[10px] text-stone-500 block leading-tight">{b.detalhe}</span>
                             </div>
-                            <span className="text-xs font-bold text-[#2c3522] whitespace-nowrap shrink-0 ml-2">R$ {b.preco}</span>
+                            <span className="text-xs font-bold text-[var(--basil)] whitespace-nowrap shrink-0 ml-2">R$ {b.preco}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -974,18 +974,18 @@ export const MenuSection: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.94, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#f4f3ef] text-[#161616] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
+              className="bg-[var(--paper-white)] text-[var(--espresso)] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl flex flex-col cursor-default border border-[#d6d2c4]"
             >
-              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[#ebe8dc]">
+              <div className="flex items-center justify-between p-3.5 px-5 sm:p-4 sm:px-6 border-b border-[#d6d2c4] bg-[var(--ivory)]">
                 <div className="flex items-center gap-2">
-                  <UtensilsCrossed size={14} className="text-[#8b261b]" />
+                  <UtensilsCrossed size={14} className="text-[var(--tomato)]" />
                   <span className="text-xs uppercase tracking-widest font-bold text-stone-600">
                     Prato Mangiarte
                   </span>
                 </div>
                 <button
                   onClick={() => setSelectedDishModal(null)}
-                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[#161616] transition-colors cursor-pointer"
+                  className="p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-[var(--espresso)] transition-colors cursor-pointer"
                 >
                   <X size={18} />
                 </button>
@@ -998,19 +998,19 @@ export const MenuSection: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 {selectedDishModal.tag && (
-                  <div className="absolute top-3 left-3 bg-[#8b261b] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                  <div className="absolute top-3 left-3 bg-[var(--tomato)] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
                     {selectedDishModal.tag}
                   </div>
                 )}
               </div>
 
-              <div className="p-4 sm:p-6 bg-[#f4f3ef] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="p-4 sm:p-6 bg-[var(--paper-white)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
                   <div className="flex justify-between items-baseline gap-4 mb-1">
-                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[#161616] font-semibold">
+                    <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[var(--espresso)] font-semibold">
                       {selectedDishModal.nome}
                     </h4>
-                    <span className="text-xs sm:text-sm font-bold text-white bg-[#8b261b] px-2.5 py-0.5 rounded-full whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-white bg-[var(--tomato)] px-2.5 py-0.5 rounded-full whitespace-nowrap">
                       R$ {selectedDishModal.preco}
                     </span>
                   </div>
@@ -1044,7 +1044,7 @@ export const MenuSection: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.94, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#f4f3ef] p-2 md:p-4 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col relative cursor-default border border-[#d6d2c4]"
+              className="bg-[var(--paper-white)] p-2 md:p-4 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col relative cursor-default border border-[#d6d2c4]"
             >
               <div className="flex justify-between items-center mb-3 px-2">
                 <span className="text-xs tracking-widest text-stone-600 uppercase font-bold">
@@ -1052,7 +1052,7 @@ export const MenuSection: React.FC = () => {
                 </span>
                 <button
                   onClick={() => setShowFlyerModal(false)}
-                  className="text-[#161616] hover:text-[#8b261b] text-sm font-bold uppercase tracking-wider px-3 py-1 bg-black/5 hover:bg-black/10 rounded-full cursor-pointer transition-colors"
+                  className="text-[var(--espresso)] hover:text-[var(--tomato)] text-sm font-bold uppercase tracking-wider px-3 py-1 bg-black/5 hover:bg-black/10 rounded-full cursor-pointer transition-colors"
                 >
                   Fechar &times;
                 </button>

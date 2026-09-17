@@ -14,15 +14,15 @@ export const MangiarteLogo: React.FC<MangiarteLogoProps> = ({
   variant = 'transparent',
 }) => {
   const isBadge = variant === 'badge';
-  const textColor = theme === 'dark' || isBadge ? 'text-white' : 'text-stone-900';
+  const textColor = theme === 'dark' || isBadge ? 'text-[var(--paper-white)]' : 'text-[var(--basil)]';
   const badgeClasses = isBadge 
-    ? 'bg-stone-950 px-6 py-3 rounded-xl border border-white/10 shadow-xl' 
+    ? 'bg-[var(--espresso)] px-6 py-3 rounded-xl border border-white/10 shadow-xl' 
     : 'bg-transparent';
 
   // Size mapping
   const sizeConfig = {
     sm: {
-      title: 'text-2xl',
+      title: 'text-3xl',
       subtitle: 'text-[8px] tracking-[0.2em]',
       gap: 'gap-1 mt-0.5',
     },
@@ -49,19 +49,17 @@ export const MangiarteLogo: React.FC<MangiarteLogoProps> = ({
     <div
       className={`relative inline-flex flex-col items-center justify-center transition-transform duration-300 hover:scale-[1.02] ${badgeClasses} ${className}`}
     >
-      <span 
-        className={`font-script ${textColor} ${config.title} leading-none font-normal select-none drop-shadow-md`}
-      >
-        Mangiarte
+      <span className={`font-serif-cormorant font-bold ${config.title} leading-none select-none`} style={{ color: theme === 'dark' || isBadge ? 'var(--paper-white)' : 'var(--basil)' }}>
+        Mangi<span style={{ color: 'var(--tomato)' }}>arte</span>
       </span>
       <div className={`flex items-center justify-center ${config.gap}`}>
-        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-amber-500/50' : 'bg-stone-400'}`} />
+        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-[var(--saffron)]' : 'bg-[var(--espresso)]/30'}`} />
         <span 
-          className={`uppercase ${config.subtitle} ${textColor} font-medium whitespace-nowrap select-none font-serif-cormorant`}
+          className={`uppercase ${config.subtitle} ${textColor} font-bold whitespace-nowrap select-none font-sans-body`}
         >
           Cucina Italiana
         </span>
-        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-amber-500/50' : 'bg-stone-400'}`} />
+        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-[var(--saffron)]' : 'bg-[var(--espresso)]/30'}`} />
       </div>
     </div>
   );

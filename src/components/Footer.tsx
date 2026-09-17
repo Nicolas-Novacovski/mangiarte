@@ -4,13 +4,13 @@ import { Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#161616] text-[#f4f3ef] pt-20 pb-10 border-t-[6px] border-[#8b261b]">
+    <footer className="bg-[var(--espresso)] text-[var(--paper-white)] pt-20 pb-10 border-t-[6px] border-[var(--tomato)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
         
         <MangiarteLogo size="md" theme="dark" />
         
         <div className="mt-8 flex gap-6">
-          <a href="https://www.instagram.com/restaurantemangiarte/" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-3 rounded-full text-stone-400 hover:text-white hover:bg-[#8b261b] hover:scale-110 transition-all duration-300">
+          <a href="https://www.instagram.com/restaurantemangiarte/" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-3 rounded-full text-stone-400 hover:text-white hover:bg-[var(--tomato)] hover:scale-110 transition-all duration-300">
             <Instagram size={20} />
           </a>
         </div>

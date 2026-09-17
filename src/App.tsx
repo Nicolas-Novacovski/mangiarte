@@ -22,7 +22,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f4f3ef] text-[#161616] font-sans-body">
+    <div className="min-h-screen flex flex-col bg-[var(--paper-white)] text-[var(--espresso)] font-sans-body">
       <Header />
 
       <main className="flex-1">

@@ -1,0 +1,30 @@
+--- src/components/Hero.tsx
++++ src/components/Hero.tsx
+@@ -28,8 +28,8 @@
+             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+           >
+-            <h1 className="font-display font-bold text-[120px] md:text-[180px] lg:text-[220px] leading-[0.85] tracking-tight uppercase">
++            <h1 className="font-display font-bold text-[clamp(90px,18vw,220px)] leading-[0.85] tracking-tight uppercase">
+               <span className="text-[var(--basil)] block">Italia</span>
+               <span className="text-[var(--tomato)] block -mt-2 md:-mt-4">À Mesa.</span>
+             </h1>
+           </motion.div>
+@@ -52,14 +52,14 @@
+         </div>
+ 
+         {/* Right Content: Giant Plate */}
+-        <div className="w-full md:w-[55%] absolute right-0 md:-right-[5%] top-[50%] md:top-[55%] -translate-y-1/2 z-10 pointer-events-none">
++        <div className="w-[120%] md:w-[55%] absolute -right-[10%] md:-right-[5%] top-[60%] md:top-[55%] -translate-y-1/2 z-10 pointer-events-none opacity-40 md:opacity-100">
+           <motion.div
+             initial={{ scale: 0.9, opacity: 0 }}
+             animate={{ scale: 1, opacity: 1 }}
+             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+             className="relative w-full aspect-square"
+           >
+             <img 
+               src="/pratos/gnocchi-supremo-01.jpg" 
+               alt="Gnocchi Supremo" 
+-              className="w-[120%] max-w-none h-auto object-cover rounded-full shadow-2xl"
++              className="w-[100%] md:w-[120%] max-w-none h-auto object-cover rounded-full shadow-2xl"
+               style={{ clipPath: 'circle(48% at 50% 50%)' }}
+             />
