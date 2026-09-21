@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 relative z-30 w-full sm:w-auto max-w-md sm:max-w-none">
               <button 
                 onClick={onExploreMenu}
-                className="group flex items-center justify-center gap-3 font-sans-body text-xs sm:text-sm tracking-wider uppercase font-bold text-white bg-[var(--tomato)] px-7 sm:px-8 py-4 rounded-xl sm:rounded-sm transition-all hover:bg-[#a02c25] active:scale-[0.98] shadow-lg hover:shadow-xl cursor-pointer min-h-[48px]"
+                className="group flex items-center justify-center gap-3 font-sans-body text-xs sm:text-sm tracking-wider uppercase font-bold text-white bg-[var(--tomato)] border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] px-7 sm:px-8 py-4 rounded-xl sm:rounded-sm transition-all duration-300 active:scale-[0.98] shadow-lg hover:shadow-xl cursor-pointer min-h-[48px]"
               >
                 Ver o cardápio
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

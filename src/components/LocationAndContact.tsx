@@ -17,6 +17,9 @@ export const LocationAndContact: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              <div className="mb-5">
+                <MangiarteLogo size="md" theme="light" />
+              </div>
               <span className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-bold text-[var(--tomato)] block mb-2">
                 Onde Estamos
               </span>
@@ -100,7 +103,7 @@ export const LocationAndContact: React.FC = () => {
               href="https://www.google.com/maps/dir/?api=1&destination=Shopping+Água+Verde+Curitiba"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 bg-[var(--tomato)] hover:bg-[#a02c25] active:scale-[0.98] text-white rounded-xl text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 shadow-md transition-all sm:hidden cursor-pointer"
+              className="w-full py-3.5 bg-[var(--tomato)] text-white border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] active:scale-[0.98] rounded-xl text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 shadow-md transition-all duration-300 sm:hidden cursor-pointer"
             >
               <MapPin size={16} /> Abrir Rota GPS no Google Maps
             </a>

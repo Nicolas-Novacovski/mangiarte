@@ -356,7 +356,7 @@ export const GalleryAndHighlights: React.FC = () => {
                     setActiveModalDish(null);
                     handleScrollToMenu();
                   }}
-                  className="w-full sm:w-auto shrink-0 bg-[var(--tomato)] hover:bg-[#a32e21] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-colors text-center cursor-pointer"
+                  className="w-full sm:w-auto shrink-0 bg-[var(--tomato)] text-white border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300 text-center cursor-pointer shadow-sm hover:shadow-md"
                 >
                   Ver no Menu
                 </button>

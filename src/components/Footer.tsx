@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-[var(--espresso)] text-[var(--paper-white)] pt-16 sm:pt-20 pb-24 md:pb-10 border-t-[6px] border-[var(--tomato)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
         
-        <MangiarteLogo size="md" theme="dark" />
+        <MangiarteLogo size="lg" theme="dark" />
         
         <div className="mt-8 flex gap-6">
           <a href="https://www.instagram.com/restaurantemangiarte/" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-3 rounded-full text-stone-400 hover:text-white hover:bg-[var(--tomato)] hover:scale-110 transition-all duration-300">

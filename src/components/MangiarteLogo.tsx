@@ -14,54 +14,38 @@ export const MangiarteLogo: React.FC<MangiarteLogoProps> = ({
   variant = 'transparent',
 }) => {
   const isBadge = variant === 'badge';
-  const textColor = theme === 'dark' || isBadge ? 'text-[var(--paper-white)]' : 'text-[var(--basil)]';
+  
+  // Use high-contrast dark-mode logo on dark backgrounds (like the footer)
+  // and light-mode logo on light backgrounds (like the header or ivory cards)
+  const logoSrc = theme === 'dark' || isBadge 
+    ? '/logo-mangiarte-dark.png' 
+    : '/logo-mangiarte-light.png';
+
   const badgeClasses = isBadge 
-    ? 'bg-[var(--espresso)] px-6 py-3 rounded-xl border border-white/10 shadow-xl' 
+    ? 'bg-[var(--espresso)] px-4 py-2.5 rounded-xl border border-white/10 shadow-xl' 
     : 'bg-transparent';
 
-  // Size mapping
-  const sizeConfig = {
-    sm: {
-      title: 'text-3xl',
-      subtitle: 'text-[8px] tracking-[0.2em]',
-      gap: 'gap-1 mt-0.5',
-    },
-    md: {
-      title: 'text-3xl sm:text-4xl',
-      subtitle: 'text-[10px] tracking-[0.25em]',
-      gap: 'gap-2 mt-1',
-    },
-    lg: {
-      title: 'text-5xl sm:text-6xl md:text-7xl',
-      subtitle: 'text-xs sm:text-sm tracking-[0.3em]',
-      gap: 'gap-3 mt-1.5',
-    },
-    xl: {
-      title: 'text-6xl sm:text-7xl md:text-8xl',
-      subtitle: 'text-sm sm:text-base tracking-[0.35em]',
-      gap: 'gap-4 mt-2',
-    }
+  // Responsive height scale respecting the logo aspect ratio (~3.4:1)
+  const sizeClasses = {
+    sm: 'h-7 sm:h-8 max-h-8 w-auto',
+    md: 'h-9 sm:h-11 md:h-12 max-h-12 w-auto',
+    lg: 'h-12 sm:h-15 md:h-18 max-h-18 w-auto',
+    xl: 'h-16 sm:h-20 md:h-24 max-h-24 w-auto',
   };
-
-  const config = sizeConfig[size];
 
   return (
     <div
-      className={`relative inline-flex flex-col items-center justify-center transition-transform duration-300 hover:scale-[1.02] ${badgeClasses} ${className}`}
+      className={`relative inline-flex items-center justify-center transition-transform duration-300 hover:scale-[1.02] select-none ${badgeClasses} ${className}`}
     >
-      <span className={`font-serif-cormorant font-bold ${config.title} leading-none select-none`} style={{ color: theme === 'dark' || isBadge ? 'var(--paper-white)' : 'var(--basil)' }}>
-        Mangi<span style={{ color: 'var(--tomato)' }}>arte</span>
-      </span>
-      <div className={`flex items-center justify-center ${config.gap}`}>
-        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-[var(--saffron)]' : 'bg-[var(--espresso)]/30'}`} />
-        <span 
-          className={`uppercase ${config.subtitle} ${textColor} font-bold whitespace-nowrap select-none font-sans-body`}
-        >
-          Cucina Italiana
-        </span>
-        <div className={`h-[1px] w-6 sm:w-8 ${theme === 'dark' || isBadge ? 'bg-[var(--saffron)]' : 'bg-[var(--espresso)]/30'}`} />
-      </div>
+      <img
+        src={logoSrc}
+        alt="Mangiarte Cucina Italiana"
+        className={`object-contain transition-all duration-300 drop-shadow-sm ${sizeClasses[size]}`}
+        loading="eager"
+        decoding="async"
+      />
     </div>
   );
 };
+
 

@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
             <button onClick={() => scrollTo('menu')} className={desktopNavClass}>Cardápio</button>
             <button onClick={() => scrollTo('galeria')} className={desktopNavClass}>Galeria</button>
             <button onClick={() => scrollTo('contato')} className={desktopNavClass}>Localização</button>
-            <button onClick={() => scrollTo('contato')} className="cursor-pointer ml-2 px-5 py-2.5 rounded-sm bg-[var(--tomato)] text-white text-xs tracking-wider font-bold hover:bg-[#a02c25] transition-colors flex items-center gap-2 shadow-sm">
+            <button onClick={() => scrollTo('contato')} className="cursor-pointer ml-2 px-5 py-2.5 rounded-sm bg-[var(--tomato)] text-white text-xs tracking-wider font-bold border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md">
               <MapPin size={14} /> Como chegar
             </button>
           </nav>
@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="cursor-pointer w-full py-3.5 rounded-xl bg-[var(--tomato)] hover:bg-[#a02c25] active:scale-[0.98] text-white text-xs tracking-wider uppercase font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="cursor-pointer w-full py-3.5 rounded-xl bg-[var(--tomato)] text-white border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] active:scale-[0.98] text-xs tracking-wider uppercase font-bold flex items-center justify-center gap-2 shadow-md transition-all duration-300"
                 >
                   <MapPin size={16} /> Abrir Rota no Google Maps
                 </a>

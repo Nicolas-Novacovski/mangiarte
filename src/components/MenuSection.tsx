@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { executivoSemana, cardapioGeral } from '../data/mangiarte';
 import { Sparkles, UtensilsCrossed, Calendar, Eye, X, Image as ImageIcon } from 'lucide-react';
+import { MangiarteLogo } from './MangiarteLogo';
 
 interface DishModalData {
   nome: string;
@@ -368,7 +369,7 @@ export const MenuSection: React.FC = () => {
               className="bg-[#f9f8f5] border border-[#d6d2c4] sm:border-2 rounded-2xl p-3.5 sm:p-8 md:p-12 shadow-xl sm:shadow-2xl relative overflow-hidden"
             >
               {/* Top Banner do Cardápio Geral */}
-              <div className="border-b-2 border-[var(--basil)]/20 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="border-b-2 border-[var(--basil)]/20 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <div className="flex items-center gap-2 text-[var(--basil)] text-xs uppercase tracking-[0.2em] font-bold mb-1">
                     <UtensilsCrossed size={14} />
@@ -382,8 +383,13 @@ export const MenuSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[var(--tomato)] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md shrink-0">
-                  Massas, Carnes, Risotos & Vinhos
+                <div className="flex items-center gap-4 shrink-0 flex-wrap justify-end">
+                  <div className="hidden sm:block">
+                    <MangiarteLogo size="sm" theme="light" />
+                  </div>
+                  <div className="bg-[var(--tomato)] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md">
+                    Massas, Carnes, Risotos & Vinhos
+                  </div>
                 </div>
               </div>
 

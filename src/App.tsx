@@ -63,7 +63,7 @@ export default function App() {
           <div className="pointer-events-auto bg-[var(--espresso)]/95 text-white backdrop-blur-md border border-white/20 px-3.5 py-2 rounded-full shadow-2xl flex items-center gap-1.5 animate-in fade-in slide-in-from-bottom-3 duration-300">
             <button
               onClick={handleScrollToMenu}
-              className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--tomato)] hover:bg-[#a02c25] active:scale-95 text-white transition-all flex items-center gap-1.5 shadow-md"
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--tomato)] text-white border border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] active:scale-95 transition-all duration-300 flex items-center gap-1.5 shadow-md"
             >
               <UtensilsCrossed size={13} />
               <span>Cardápio</span>
