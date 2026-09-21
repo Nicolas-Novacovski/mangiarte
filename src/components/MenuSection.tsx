@@ -57,7 +57,7 @@ export const MenuSection: React.FC = () => {
         Menu
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <motion.div 
@@ -65,24 +65,24 @@ export const MenuSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-left mb-12"
+          className="text-left mb-8 sm:mb-12"
         >
-          <span className="text-[11px] tracking-[0.3em] uppercase text-[var(--tomato)] font-bold mb-3 block">
+          <span className="text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-[var(--tomato)] font-bold mb-2 sm:mb-3 block">
             Cucina Italiana Tradizionale
           </span>
-          <h2 className="font-serif-cormorant text-5xl md:text-6xl text-[var(--espresso)]">
+          <h2 className="font-serif-cormorant text-3xl sm:text-5xl md:text-6xl text-[var(--espresso)]">
             Nossos Cardápios
           </h2>
-          <p className="text-stone-600 font-sans-body text-sm max-w-xl mt-3">
+          <p className="text-stone-600 font-sans-body text-xs sm:text-sm max-w-xl mt-2 sm:mt-3">
             Escolha abaixo qual cardápio deseja visualizar. Pratos saborosos e clássicos da culinária italiana servidos com carinho no Shopping Água Verde.
           </p>
         </motion.div>
 
         {/* Menu Switcher Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mb-16 max-w-2xl">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 mb-8 sm:mb-14 max-w-2xl">
           <button
             onClick={() => setActiveMenuTab('executivo')}
-            className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1 shadow-sm border ${
               activeMenuTab === 'executivo'
                 ? 'bg-[var(--basil)] text-white border-[var(--basil)] shadow-lg scale-100 ring-2 ring-[var(--basil)]/20'
                 : 'bg-[var(--paper-white)] text-[var(--basil)] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -99,7 +99,7 @@ export const MenuSection: React.FC = () => {
 
           <button
             onClick={() => setActiveMenuTab('geral')}
-            className={`cursor-pointer w-full sm:w-1/2 py-4 px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1.5 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1 shadow-sm border ${
               activeMenuTab === 'geral'
                 ? 'bg-[var(--tomato)] text-white border-[var(--tomato)] shadow-lg scale-100 ring-2 ring-[var(--tomato)]/20'
                 : 'bg-[var(--paper-white)] text-[var(--espresso)] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -124,7 +124,7 @@ export const MenuSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-[#f9f8f5] border-2 border-[#d6d2c4] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden"
+              className="bg-[#f9f8f5] border border-[#d6d2c4] sm:border-2 rounded-2xl p-3.5 sm:p-8 md:p-12 shadow-xl sm:shadow-2xl relative overflow-hidden"
             >
               {/* Top Banner do Menu Executivo */}
               <div className="border-b-2 border-[var(--tomato)]/30 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -365,7 +365,7 @@ export const MenuSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-[#f9f8f5] border-2 border-[#d6d2c4] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden"
+              className="bg-[#f9f8f5] border border-[#d6d2c4] sm:border-2 rounded-2xl p-3.5 sm:p-8 md:p-12 shadow-xl sm:shadow-2xl relative overflow-hidden"
             >
               {/* Top Banner do Cardápio Geral */}
               <div className="border-b-2 border-[var(--basil)]/20 pb-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">

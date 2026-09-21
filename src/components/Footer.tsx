@@ -4,7 +4,7 @@ import { Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[var(--espresso)] text-[var(--paper-white)] pt-20 pb-10 border-t-[6px] border-[var(--tomato)]">
+    <footer className="bg-[var(--espresso)] text-[var(--paper-white)] pt-16 sm:pt-20 pb-24 md:pb-10 border-t-[6px] border-[var(--tomato)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
         
         <MangiarteLogo size="md" theme="dark" />
