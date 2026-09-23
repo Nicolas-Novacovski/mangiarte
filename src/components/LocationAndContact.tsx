@@ -33,11 +33,11 @@ export const LocationAndContact: React.FC = () => {
                     <MapPin strokeWidth={1.5} size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Endereço</h3>
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Endereço & Região</h3>
                     <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed">
                       Shopping Água Verde • Praça de Alimentação<br />
-                      Av. Rep. Argentina, 1927 - Água Verde<br />
-                      Curitiba - PR
+                      Av. Rep. Argentina, 1927 - Água Verde, Curitiba - PR<br />
+                      <span className="text-stone-500 text-[11px] block mt-1">Fácil acesso para os bairros Água Verde, Batel, Portão, Vila Izabel e Rebouças.</span>
                     </p>
                   </div>
                 </div>
@@ -47,10 +47,11 @@ export const LocationAndContact: React.FC = () => {
                     <Clock strokeWidth={1.5} size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Horários</h3>
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Horários de Funcionamento</h3>
                     <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed">
-                      Segunda a Sábado: 11h às 22h<br />
-                      Domingo: 11h às 16h
+                      Segunda a Sábado: 11h às 22h (Almoço & Jantar)<br />
+                      Domingo: 11h às 16h (Almoço Italiano)<br />
+                      <span className="text-stone-500 text-[11px] block mt-1">Menu Executivo da Semana servido de segunda a sexta, das 11h às 15h.</span>
                     </p>
                   </div>
                 </div>
@@ -60,9 +61,9 @@ export const LocationAndContact: React.FC = () => {
                     <Phone strokeWidth={1.5} size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Informações & Atendimento</h3>
+                    <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--espresso)] mb-1">Informações & Comodidades</h3>
                     <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed mb-4">
-                      Atendimento rápido na Praça de Alimentação do Shopping Água Verde. Mesas disponíveis da praça e estacionamento no local.
+                      Atendimento acolhedor na ampla Praça de Alimentação do Shopping Água Verde. Estacionamento coberto no local e localização privilegiada em frente à Estação Tubo Dom Pedro I na rápida Portão/Centro.
                     </p>
                     <a 
                       href="https://www.google.com/maps/dir/?api=1&destination=Shopping+Água+Verde+Curitiba" 

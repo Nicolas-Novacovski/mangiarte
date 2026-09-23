@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { MenuSection } from './components/MenuSection';
 import { GalleryAndHighlights } from './components/AboutSection';
 import { LocationAndContact } from './components/LocationAndContact';
+import { LocalSeoFaq } from './components/LocalSeoFaq';
 import { Footer } from './components/Footer';
 import { UtensilsCrossed, MapPin, Sparkles } from 'lucide-react';
 
@@ -53,6 +54,7 @@ export default function App() {
         <GalleryAndHighlights />
         <MenuSection />
         <LocationAndContact />
+        <LocalSeoFaq />
       </main>
 
       <Footer />

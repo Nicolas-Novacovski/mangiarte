@@ -9,7 +9,14 @@ export const Footer: React.FC = () => {
         
         <MangiarteLogo size="lg" theme="dark" />
         
-        <div className="mt-8 flex gap-6">
+        <p className="mt-4 text-xs tracking-wider uppercase text-stone-400 font-bold">
+          Restaurante Italiano • Shopping Água Verde • Curitiba - PR
+        </p>
+        <p className="text-stone-400 text-xs mt-1 font-sans-body max-w-md">
+          Av. República Argentina, 1927 • Praça de Alimentação • Atendendo Água Verde, Batel, Portão e região
+        </p>
+
+        <div className="mt-6 flex gap-6">
           <a href="https://www.instagram.com/restaurantemangiarte/" target="_blank" rel="noopener noreferrer" className="bg-white/5 p-3 rounded-full text-stone-400 hover:text-white hover:bg-[var(--tomato)] hover:scale-110 transition-all duration-300">
             <Instagram size={20} />
           </a>

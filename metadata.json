@@ -1,6 +1,6 @@
 {
   "name": "Remix Mangiarte Cucina Italiana",
-  "description": "Culinária italiana na Praça de Alimentação do Shopping Água Verde em Curitiba. Pratos clássicos, receitas generosas e o sabor da autêntica cantina italiana.",
+  "description": "Restaurante italiano autêntico no Shopping Água Verde, Curitiba. Massas frescas artesanais, risotos, menu executivo e sabores da culinária italiana.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

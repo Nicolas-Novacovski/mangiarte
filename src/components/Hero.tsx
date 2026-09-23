@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
           >
             <img 
               src="/pratos/prato-sem-fundo.png" 
-              alt="Gnocchi Supremo" 
+              alt="Prato artesanal da culinária italiana no Restaurante Mangiarte - Shopping Água Verde Curitiba" 
               className="w-full md:w-[130%] max-w-none h-auto object-contain drop-shadow-2xl"
             />
           </motion.div>
