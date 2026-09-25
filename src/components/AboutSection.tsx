@@ -104,7 +104,7 @@ export const GalleryAndHighlights: React.FC = () => {
   };
 
   return (
-    <section id="galeria" ref={sectionRef} className="py-20 md:py-24 bg-[var(--ivory)] overflow-hidden border-t border-[#d6d2c4] relative">
+    <section id="galeria" ref={sectionRef} className="py-20 md:py-28 bg-[var(--ivory)] overflow-hidden border-t border-[#d6d2c4] relative">
       {/* Background Parallax Subtle Ambient Shapes */}
       <motion.div 
         style={{ y: yBgDecor }}
@@ -122,178 +122,188 @@ export const GalleryAndHighlights: React.FC = () => {
         Sapori
       </motion.div>
       
-      {/* Highlights Text */}
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 text-left mb-12 sm:mb-16 md:mb-20 relative z-10">
+      {/* Unified Section Container aligned with all other sections */}
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+        
+        {/* Highlights: Tradição & Praticidade */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="text-left mb-14 sm:mb-16 md:mb-20"
         >
-          <span className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase font-bold text-[var(--tomato)] block mb-2 sm:mb-3">
+          <span className="text-[10px] sm:text-[11px] tracking-[0.3em] uppercase font-bold text-[var(--tomato)] block mb-2 sm:mb-3">
             Tradição & Praticidade
           </span>
-          <h2 className="font-serif-cormorant text-2xl sm:text-4xl md:text-5xl text-[var(--espresso)] leading-tight mb-8 sm:mb-12 max-w-3xl">
+          <h2 className="font-serif-cormorant text-3xl sm:text-5xl md:text-6xl text-[var(--espresso)] leading-tight mb-8 sm:mb-10 max-w-3xl">
             Culinária italiana saborosa no seu dia a dia.
             <span className="italic text-[var(--tomato)] block mt-1">Na Praça de Alimentação do Shopping Água Verde.</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 xl:gap-8 text-left">
-            <div className="bg-white/60 backdrop-blur-sm p-5 sm:p-6 rounded-xl border border-[#d6d2c4] shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 xl:gap-8 text-left">
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-7 rounded-xl border border-[#d6d2c4] shadow-sm flex flex-col h-full hover:border-[var(--tomato)]/40 hover:shadow-md transition-all">
               <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-2.5 border-b border-[var(--tomato)]/20 pb-2">
                 Massas & Pratos
               </h3>
-              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed">
+              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed flex-1">
                 Pratos clássicos servidos quentes e no ponto certo, com combinações tradicionais de queijos, carnes e molhos encorpados.
               </p>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm p-5 sm:p-6 rounded-xl border border-[#d6d2c4] shadow-sm">
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-7 rounded-xl border border-[#d6d2c4] shadow-sm flex flex-col h-full hover:border-[var(--tomato)]/40 hover:shadow-md transition-all">
               <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-2.5 border-b border-[var(--tomato)]/20 pb-2">
                 Bebidas & Vinhos
               </h3>
-              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed">
+              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed flex-1">
                 Vinhos em taça ou garrafa, refrigerantes e sucos para acompanhar sua refeição com comodidade.
               </p>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm p-5 sm:p-6 rounded-xl border border-[#d6d2c4] shadow-sm">
+            <div className="bg-white/70 backdrop-blur-sm p-6 sm:p-7 rounded-xl border border-[#d6d2c4] shadow-sm flex flex-col h-full hover:border-[var(--tomato)]/40 hover:shadow-md transition-all">
               <h3 className="text-xs tracking-[0.2em] uppercase font-bold text-[var(--tomato)] mb-2.5 border-b border-[var(--tomato)]/20 pb-2">
                 Praça de Alimentação
               </h3>
-              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed">
+              <p className="text-stone-600 font-sans-body text-xs sm:text-sm leading-relaxed flex-1">
                 Localizado na praça de alimentação do Shopping Água Verde. Atendimento rápido, ambiente prático e o conforto da praça para o seu almoço ou jantar.
               </p>
             </div>
           </div>
         </motion.div>
-      </div>
 
-      {/* Carousel Header with Navigation Controls */}
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 mb-5 sm:mb-8 flex items-end justify-between gap-4">
-        <div>
-          <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[var(--basil)] block mb-1">
-            Galeria Gastronômica
-          </span>
-          <h3 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl text-[var(--espresso)]">
-            Pratos & Momentos Mangiarte
-          </h3>
-        </div>
+        {/* Carousel Header with Navigation Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-10">
+          <div>
+            <span className="text-[10px] sm:text-[11px] tracking-[0.3em] uppercase font-bold text-[var(--tomato)] block mb-2 sm:mb-3">
+              Galeria Gastronômica
+            </span>
+            <h2 className="font-serif-cormorant text-3xl sm:text-5xl md:text-6xl text-[var(--espresso)] leading-tight">
+              Pratos & Momentos Mangiarte
+            </h2>
+            <p className="text-stone-600 font-sans-body text-xs sm:text-sm max-w-2xl mt-2 sm:mt-3 leading-relaxed">
+              Momentos autênticos, massas artesanais frescas e cortes especiais preparados diariamente na Praça de Alimentação do Shopping Água Verde.
+            </p>
+          </div>
 
-        {/* Buttons Controls */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => handleScroll('left')}
-            disabled={!canScrollLeft}
-            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
-              canScrollLeft
-                ? 'border-[var(--basil)] bg-white text-[var(--basil)] hover:bg-[var(--basil)] hover:text-white shadow-sm active:scale-95'
-                : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
-            }`}
-            aria-label="Voltar prato anterior"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            onClick={() => handleScroll('right')}
-            disabled={!canScrollRight}
-            className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
-              canScrollRight
-                ? 'border-[var(--basil)] bg-white text-[var(--basil)] hover:bg-[var(--basil)] hover:text-white shadow-sm active:scale-95'
-                : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
-            }`}
-            aria-label="Avançar próximo prato"
-          >
-            <ChevronRight size={18} />
-          </button>
-        </div>
-      </div>
-
-      {/* Smooth Horizontal Scrolling Carousel with Dishes Optimized for Mobile */}
-      <div className="w-full max-w-[1400px] mx-auto relative">
-        {/* Left Blur Overlay */}
-        <div className="absolute top-0 left-0 bottom-0 w-6 sm:w-16 z-20 pointer-events-none bg-gradient-to-r from-[var(--paper-white)] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_right,black,transparent)]" />
-        
-        {/* Right Blur Overlay */}
-        <div className="absolute top-0 right-0 bottom-0 w-6 sm:w-16 z-20 pointer-events-none bg-gradient-to-l from-[var(--paper-white)] to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_left,black,transparent)]" />
-        
-        <div
-          ref={scrollContainerRef}
-          onScroll={checkScroll}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          className="flex gap-3.5 sm:gap-6 overflow-x-auto scrollbar-none px-5 sm:px-6 lg:px-12 pb-3 pt-1 snap-x snap-mandatory overscroll-x-contain scroll-smooth"
-          style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
-          {carouselDishes.map((dish, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
-              onClick={() => handleCardClick(dish)}
-              className={`flex-shrink-0 group cursor-pointer snap-center sm:snap-start select-none transition-transform duration-300 active:scale-[0.99] rounded-xl sm:rounded-sm overflow-hidden shadow-lg hover:shadow-2xl relative bg-stone-900 w-[82vw] max-w-[320px] sm:w-[350px] h-[390px] sm:h-[440px]`}
-            >
-              <img
-                src={dish.imagem}
-                alt={dish.titulo}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
-
-              {/* Tag Superior */}
-              <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 flex flex-col gap-1.5 sm:gap-2 z-10">
-                <span className="bg-[var(--basil)]/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.18em] px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-sm shadow-md border border-white/10 w-max">
-                  {dish.categoria}
-                </span>
-                {dish.preco && (
-                  <span className="bg-[var(--tomato)] text-white text-[10px] sm:text-[11px] font-bold px-2.5 sm:px-3 py-0.5 rounded-sm shadow-md w-max">
-                    {dish.preco}
-                  </span>
-                )}
-              </div>
-
-              {/* Botão de Zoom Indicativo */}
-              <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 opacity-85 group-hover:opacity-100 transition-opacity z-10">
-                <div className="bg-black/40 backdrop-blur-md text-white p-1.5 sm:p-2 rounded-full">
-                  <Eye size={14} className="sm:w-4 sm:h-4" />
-                </div>
-              </div>
-
-              {/* Descrição Inferior */}
-              <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 text-white z-10">
-                <h4 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl font-semibold mb-1.5 transition-colors leading-tight">
-                  {dish.titulo}
-                </h4>
-                <p className="text-stone-300 text-xs sm:text-sm font-sans-body leading-relaxed line-clamp-2 mb-2.5">
-                  {dish.descricao}
-                </p>
-                <div className="flex items-center gap-1.5 text-[10px] tracking-wider uppercase font-bold text-[var(--saffron)]">
-                  <span>Toque para ampliar foto</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile Carousel Swipe Indicator Dots */}
-        <div className="flex sm:hidden items-center justify-center gap-1.5 mt-4">
-          {carouselDishes.map((_, idx) => (
+          {/* Buttons Controls */}
+          <div className="flex items-center gap-2.5 shrink-0 self-start md:self-end">
             <button
-              key={idx}
-              onClick={() => scrollToDishIndex(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                activeDotIndex === idx ? 'w-5 bg-[var(--tomato)]' : 'w-1.5 bg-stone-300'
+              onClick={() => handleScroll('left')}
+              disabled={!canScrollLeft}
+              className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 flex items-center justify-center transition-all cursor-pointer ${
+                canScrollLeft
+                  ? 'border-[var(--tomato)] bg-white text-[var(--tomato)] hover:bg-[var(--tomato)] hover:text-white shadow-sm active:scale-95'
+                  : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
               }`}
-              aria-label={`Ver foto do prato ${idx + 1}`}
-            />
-          ))}
+              aria-label="Voltar prato anterior"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => handleScroll('right')}
+              disabled={!canScrollRight}
+              className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 flex items-center justify-center transition-all cursor-pointer ${
+                canScrollRight
+                  ? 'border-[var(--tomato)] bg-white text-[var(--tomato)] hover:bg-[var(--tomato)] hover:text-white shadow-sm active:scale-95'
+                  : 'border-stone-300 text-stone-300 cursor-not-allowed bg-stone-100/70'
+              }`}
+              aria-label="Avançar próximo prato"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
-        
+
+        {/* Carousel Content */}
+        <div className="relative">
+          {/* Subtle Left Fade only when scrolled */}
+          {canScrollLeft && (
+            <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-14 z-20 pointer-events-none bg-gradient-to-r from-[var(--ivory)] to-transparent" />
+          )}
+
+          {/* Subtle Right Fade only when there's more to scroll */}
+          {canScrollRight && (
+            <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-14 z-20 pointer-events-none bg-gradient-to-l from-[var(--ivory)] to-transparent" />
+          )}
+
+          <div
+            ref={scrollContainerRef}
+            onScroll={checkScroll}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-none pb-4 pt-1 snap-x snap-mandatory overscroll-x-contain scroll-smooth"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {carouselDishes.map((dish, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.2) }}
+                onClick={() => handleCardClick(dish)}
+                className="flex-shrink-0 group cursor-pointer snap-start select-none transition-transform duration-300 active:scale-[0.99] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl relative bg-stone-900 w-[82vw] max-w-[320px] sm:w-[350px] lg:w-[calc((100%-3rem)/3)] xl:w-[calc((100%-4rem)/3)] h-[400px] sm:h-[450px]"
+              >
+                <img
+                  src={dish.imagem}
+                  alt={dish.titulo}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
+
+                {/* Tag Superior */}
+                <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+                  <span className="bg-[var(--basil)]/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.18em] px-3 py-1 rounded-sm shadow-md border border-white/10 w-max">
+                    {dish.categoria}
+                  </span>
+                  {dish.preco && (
+                    <span className="bg-[var(--tomato)] text-white text-[10px] sm:text-[11px] font-bold px-3 py-0.5 rounded-sm shadow-md w-max">
+                      {dish.preco}
+                    </span>
+                  )}
+                </div>
+
+                {/* Botão de Zoom Indicativo */}
+                <div className="absolute top-4 right-4 opacity-85 group-hover:opacity-100 transition-opacity z-10">
+                  <div className="bg-black/40 backdrop-blur-md text-white p-2 rounded-full">
+                    <Eye size={15} />
+                  </div>
+                </div>
+
+                {/* Descrição Inferior */}
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 text-white z-10">
+                  <h4 className="font-serif-cormorant text-2xl sm:text-3xl md:text-4xl font-semibold mb-1.5 transition-colors leading-tight">
+                    {dish.titulo}
+                  </h4>
+                  <p className="text-stone-300 text-xs sm:text-sm font-sans-body leading-relaxed line-clamp-2 mb-2.5">
+                    {dish.descricao}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-[10px] tracking-wider uppercase font-bold text-[var(--saffron)]">
+                    <span>Toque para ampliar foto</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile Carousel Swipe Indicator Dots */}
+          <div className="flex sm:hidden items-center justify-center gap-1.5 mt-4">
+            {carouselDishes.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollToDishIndex(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeDotIndex === idx ? 'w-5 bg-[var(--tomato)]' : 'w-1.5 bg-stone-300'
+                }`}
+                aria-label={`Ver foto do prato ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* Lightbox Modal para o Prato do Carrossel */}

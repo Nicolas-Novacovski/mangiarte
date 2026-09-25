@@ -58,7 +58,7 @@ export const MenuSection: React.FC = () => {
         Menu
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <motion.div 
@@ -83,7 +83,7 @@ export const MenuSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 mb-8 sm:mb-14 max-w-2xl">
           <button
             onClick={() => setActiveMenuTab('executivo')}
-            className={`cursor-pointer w-full sm:w-1/2 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 h-[76px] sm:h-[84px] px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center justify-center gap-1 shadow-sm border ${
               activeMenuTab === 'executivo'
                 ? 'bg-[var(--basil)] text-white border-[var(--basil)] shadow-lg scale-100 ring-2 ring-[var(--basil)]/20'
                 : 'bg-[var(--paper-white)] text-[var(--basil)] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -100,7 +100,7 @@ export const MenuSection: React.FC = () => {
 
           <button
             onClick={() => setActiveMenuTab('geral')}
-            className={`cursor-pointer w-full sm:w-1/2 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center gap-1 shadow-sm border ${
+            className={`cursor-pointer w-full sm:w-1/2 h-[76px] sm:h-[84px] px-5 sm:px-6 rounded-xl font-sans-body text-xs tracking-[0.18em] uppercase font-bold transition-all duration-300 flex flex-col items-center justify-center gap-1 shadow-sm border ${
               activeMenuTab === 'geral'
                 ? 'bg-[var(--tomato)] text-white border-[var(--tomato)] shadow-lg scale-100 ring-2 ring-[var(--tomato)]/20'
                 : 'bg-[var(--paper-white)] text-[var(--espresso)] border-[#d6d2c4] hover:bg-[#eae6d8]'
@@ -143,12 +143,12 @@ export const MenuSection: React.FC = () => {
                 </div>
                 
                 <div className="flex items-center gap-3 shrink-0">
-                  <div className="bg-[var(--basil)] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md">
+                  <div className="h-[40px] flex items-center justify-center bg-[var(--basil)] text-white px-5 rounded-full text-xs font-bold tracking-widest uppercase shadow-md">
                     A partir de R$ 28
                   </div>
                   <button
                     onClick={() => setShowFlyerModal(true)}
-                    className="cursor-pointer text-[11px] font-bold tracking-wider uppercase text-[var(--tomato)] border border-[var(--tomato)] hover:bg-[var(--tomato)] hover:text-white px-4 py-2.5 rounded-full transition-all duration-300"
+                    className="cursor-pointer h-[40px] flex items-center justify-center text-[11px] font-bold tracking-wider uppercase text-[var(--tomato)] border border-[var(--tomato)] hover:bg-[var(--tomato)] hover:text-white px-4 rounded-full transition-all duration-300"
                   >
                     Ver Panfleto Oficial
                   </button>
@@ -675,10 +675,20 @@ export const MenuSection: React.FC = () => {
                 <div className="space-y-12 pl-0 lg:pl-6">
                   
                   {/* SEÇÃO 3: MONTE SUA MASSA (Destaque Interativo) */}
-                  <motion.div 
-                    whileHover={{ scale: 1.015 }}
-                    className="bg-gradient-to-br from-[var(--basil)] to-[#1c2316] text-[var(--paper-white)] p-6 sm:p-8 rounded-2xl shadow-xl border border-[var(--basil)] relative overflow-hidden"
-                  >
+                  <div>
+                    <div className="border-b-2 border-[var(--tomato)] pb-2 mb-6 flex justify-between items-baseline">
+                      <h4 className="font-serif-cormorant text-3xl text-[var(--espresso)] font-bold">
+                        Monte Sua Massa
+                      </h4>
+                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[var(--tomato)]">
+                        Personalize
+                      </span>
+                    </div>
+
+                    <motion.div 
+                      whileHover={{ scale: 1.015 }}
+                      className="bg-gradient-to-br from-[var(--basil)] to-[#1c2316] text-[var(--paper-white)] p-6 sm:p-8 rounded-2xl shadow-xl border border-[var(--basil)] relative overflow-hidden"
+                    >
                     <div className="flex justify-between items-start gap-4 mb-4 border-b border-white/20 pb-3">
                       <div>
                         <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#e1ddcc] block">
@@ -760,6 +770,7 @@ export const MenuSection: React.FC = () => {
                       </div>
                     </div>
                   </motion.div>
+                </div>
 
                   {/* SEÇÃO 4: PANINIS, TOASTS & CALZONES */}
                   <div>

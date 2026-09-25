@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
           >
             <h1 className="font-display font-bold text-[clamp(52px,15vw,96px)] sm:text-[clamp(80px,16vw,140px)] md:text-[clamp(110px,16vw,210px)] leading-[0.92] tracking-tight uppercase">
               <span className="text-[var(--basil)] block">Italia</span>
-              <span className="text-[var(--tomato)] block pt-1.5 sm:pt-2 md:pt-0 text-center md:text-left">À Mesa.</span>
+              <span className="text-[var(--tomato)] block pt-1.5 sm:pt-2 md:pt-0 text-left">À Mesa.</span>
             </h1>
           </motion.div>
 
@@ -39,18 +39,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu, onGoToLocation }) => 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 relative z-30 w-full sm:w-auto max-w-md sm:max-w-none">
               <button 
                 onClick={onExploreMenu}
-                className="group flex items-center justify-center gap-3 font-sans-body text-xs sm:text-sm tracking-wider uppercase font-bold text-white bg-[var(--tomato)] border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] px-7 sm:px-8 py-4 rounded-xl sm:rounded-sm transition-all duration-300 active:scale-[0.98] shadow-lg hover:shadow-xl cursor-pointer min-h-[48px]"
+                className="group h-[52px] flex items-center justify-center gap-3 font-sans-body text-xs sm:text-sm tracking-wider uppercase font-bold text-white bg-[var(--tomato)] border-2 border-[var(--tomato)] hover:bg-white hover:text-[var(--tomato)] px-6 sm:px-8 rounded-xl sm:rounded-sm transition-all duration-300 active:scale-[0.98] shadow-lg hover:shadow-xl cursor-pointer"
               >
-                Ver o cardápio
+                <span>Ver o cardápio</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               
               <button
                 onClick={onGoToLocation}
-                className="flex items-center justify-center gap-2 text-[var(--espresso)] bg-white/85 hover:bg-white backdrop-blur-md px-4 sm:px-5 py-3.5 sm:py-2.5 rounded-xl sm:rounded-full shadow-sm border border-stone-300/60 transition-all cursor-pointer min-h-[44px]"
+                className="group h-[52px] flex items-center justify-center gap-2.5 font-sans-body text-xs sm:text-sm tracking-wider uppercase font-bold text-[var(--espresso)] bg-white/90 hover:bg-white hover:text-[var(--tomato)] hover:border-[var(--tomato)] backdrop-blur-md px-5 sm:px-6 rounded-xl sm:rounded-sm shadow-sm hover:shadow-md border-2 border-stone-300/80 transition-all duration-300 active:scale-[0.98] cursor-pointer"
               >
-                <MapPin size={15} className="text-[var(--tomato)] shrink-0" />
-                <span className="text-[11px] sm:text-xs font-bold tracking-wider uppercase">Shopping Água Verde • Curitiba</span>
+                <MapPin size={16} className="text-[var(--tomato)] shrink-0 transition-transform group-hover:scale-110" />
+                <span>Shopping Água Verde • Curitiba</span>
               </button>
             </div>
           </motion.div>
