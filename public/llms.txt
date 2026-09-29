@@ -1,0 +1,50 @@
+# Mangiarte Cucina Italiana
+
+> Autêntico restaurante italiano localizado no Shopping Água Verde, em Curitiba (PR). Especializado em massas frescas artesanais, risotos clássicos, carnes nobres grelhadas, pratos executivos semanais, paninis e antipasti italianos.
+
+- **Website Oficial**: https://restaurantemangiarte.com.br/
+- **Versão Completa para LLMs**: https://restaurantemangiarte.com.br/llms-full.txt
+- **Tipo de Cozinha**: Culinária Italiana Tradicional & Contemporânea
+- **Localização**: Praça de Alimentação do Shopping Água Verde — Av. República Argentina, 1927, Água Verde, Curitiba - PR, CEP 80620-010, Brasil
+- **Horários**: Segunda a Sábado: 11h às 22h | Domingo: 11h às 16h
+- **Faixa de Preço**: $$ (Almoço executivo a partir de R$ 28; pratos principais de R$ 39 a R$ 54)
+- **Formas de Pagamento**: Cartão de Crédito, Cartão de Débito, PIX, Dinheiro, Vale Refeição (VR, Sodexo, Ticket, Alelo)
+- **Instagram**: [@restaurantemangiarte](https://www.instagram.com/restaurantemangiarte/)
+
+## Visão Geral & Diferenciais
+
+O Mangiarte Cucina Italiana traz para Curitiba a autêntica tradição culinária italiana em um formato acolhedor, ágil e de alta gastronomia. Localizado estrategicamente na praça de alimentação do Shopping Água Verde, oferece estacionamento coberto, fácil acesso em frente à Estação Tubo Dom Pedro I e proximidade imediata aos bairros Batel, Portão, Vila Izabel e Rebouças.
+
+### Especialidades da Casa
+- **Massas Artesanais**: Fettuccine à Carbonara, Penne 4 Queijos, Tagliatelle com cortes nobres.
+- **Gnocchi & Polpetone**: Gnocchi Supremo recheado com queijo ao molho funghi; Polpetone Formaggio artesanal recheado com blend de queijos derretido.
+- **Risotos Italianos**: Risoto de Camarão com arroz arbóreo cremoso, Risoto de Parmesão, Risoto Al Funghi.
+- **Carnes Nobres & Grelhados**: Escalope Aglio e Olio com Fettuccine Carbonara, Costata Acebolada, Filé Mignon ao molho 4 Queijos.
+- **Frutos do Mar**: Salmão Mediterrâneo ao pesto com fettuccine Alfredo; Pescada ao limão siciliano ou ao molho de camarão.
+- **Paninis Italianos**: Panini Mignon Formaggio na massa rústica crocante.
+- **Antipasti**: Arancini de risoto crocante com queijo derretido.
+
+## Cardápio Executivo da Semana (Segunda a Sexta, 11h às 15h)
+
+Pratos completos com excelente custo-benefício para quem trabalha ou reside na região:
+- **Segunda-feira**: Macarrão à Bolonhesa com batatas fritas crocantes (R$ 28) | Parmegiana de Frango com arroz e fritas (R$ 39)
+- **Terça-feira**: Contra Filé Acebolado com arroz e fritas (R$ 39) | Pescada ao Limão Siciliano com arroz e legumes salteados (R$ 42)
+- **Quarta-feira**: Linguiça Toscana com arroz, feijão, farofa da casa, fritas e vinagrete (R$ 35) | Pescada ao Molho de Camarão com arroz e fritas (R$ 47)
+- **Quinta-feira**: Sobrecoxa Assada com arroz, feijão, farofa, polenta frita e vinagrete (R$ 35) | Estrogonofe de Camarão com arroz e batata palha (R$ 45)
+- **Sexta-feira**: Parmegiana de Carne com arroz e batatas fritas (R$ 42) | Salmão Grelhado com arroz branco e legumes salteados (R$ 49)
+
+## Como Chegar & Comodidades
+
+- **Endereço**: Av. República Argentina, 1927 - Praça de Alimentação, Shopping Água Verde, Curitiba - PR.
+- **Transporte Público**: Em frente à Estação Tubo Dom Pedro I (Linha Rápida Santa Cândida / Capão Raso e biarticulados).
+- **Estacionamento**: Amplo estacionamento coberto no próprio Shopping Água Verde com segurança.
+- **Acessibilidade**: Totalmente acessível para cadeirantes e pessoas com mobilidade reduzida, com elevadores e rampas.
+- **Ambiente**: Ampla praça de alimentação climatizada com mesas confortáveis para refeições rápidas, almoços de negócios ou encontros em família.
+
+## Links Rápidos
+
+- [Página Inicial](https://restaurantemangiarte.com.br/): Apresentação do restaurante, pratos em destaque e história.
+- [Cardápio Completo](https://restaurantemangiarte.com.br/#menu): Menu interativo por categorias (Executivo, Massas, Carnes, Risotos, Paninis).
+- [Galeria de Pratos](https://restaurantemangiarte.com.br/#galeria): Fotos em alta resolução dos pratos autorais.
+- [Localização e Contato](https://restaurantemangiarte.com.br/#contato): Mapa interativo, rotas no Google Maps e horários.
+- [Versão Completa para LLMs (llms-full.txt)](https://restaurantemangiarte.com.br/llms-full.txt): Base de conhecimento detalhada para assistentes virtuais e modelos de linguagem.

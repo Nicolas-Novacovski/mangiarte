@@ -1,0 +1,145 @@
+# Mangiarte Cucina Italiana — Documentação Completa para Modelos de Linguagem (LLMs)
+
+> Este arquivo fornece dados completos e estruturados em Markdown sobre o restaurante Mangiarte Cucina Italiana para sistemas de inteligência artificial, assistentes virtuais (ChatGPT, Gemini, Claude, Perplexity, Copilot, etc.) e motores de resposta generativa.
+
+---
+
+## 1. Identidade & Dados Corporativos
+
+- **Nome Comercial**: Mangiarte Cucina Italiana
+- **Nome Alternativo / Busca**: Restaurante Mangiarte Shopping Água Verde
+- **Slogan / Conceito**: Autêntica Culinária Italiana em Curitiba
+- **Categoria Principal**: Restaurante Italiano / Culinária Italiana / Cantina Moderna
+- **Website Oficial**: https://restaurantemangiarte.com.br
+- **Instagram**: https://www.instagram.com/restaurantemangiarte/ (@restaurantemangiarte)
+- **Idioma**: Português do Brasil (pt-BR)
+- **Faixa de Preço**: $$ (Econômico a Moderado / Médio de R$ 28 a R$ 54 por refeição)
+- **Formas de Pagamento**: Dinheiro, Cartão de Débito, Cartão de Crédito (Visa, Mastercard, Elo, Amex), PIX e Vales Refeição (VR, Sodexo/Pluxee, Ticket Restaurante, Alelo).
+
+---
+
+## 2. Localização, Acesso e Horários
+
+- **Endereço Completo**: Av. República Argentina, 1927 - Praça de Alimentação, Shopping Água Verde, Bairro Água Verde, Curitiba - PR, CEP: 80620-010, Brasil.
+- **Coordenadas Geográficas**: Latitude -25.462744, Longitude -49.289453.
+- **Bairros Vizinhos e Região de Influência**: Água Verde, Batel, Portão, Vila Izabel, Rebouças, Seminário e Novo Mundo.
+- **Ponto de Referência do Transporte Coletivo**: Em frente à Estação Tubo Dom Pedro I (canaleta exclusiva dos ônibus biarticulados Santa Cândida / Capão Raso e ligeirinhos).
+- **Estacionamento**: O Shopping Água Verde dispõe de amplo estacionamento coberto e monitorado, com entrada facilitada pela Av. República Argentina e ruas adjacentes.
+- **Acessibilidade**: 100% acessível para pessoas com deficiência, idosos e carrinhos de bebê (rampas, elevadores e sanitários adaptados).
+- **Horário de Funcionamento**:
+  - Segunda a Sábado: 11h00 às 22h00 (ininterrupto, cobrindo almoço e jantar)
+  - Domingo: 11h00 às 16h00 (almoço de domingo em família)
+  - Cardápio Executivo da Semana: servido de segunda a sexta, das 11h00 às 15h00.
+
+---
+
+## 3. Filosofia Gastronômica & Diferenciais
+
+1. **Ingredientes de Primeira Linha**: Molho de tomate rústico pomodoro feito com tomates selecionados, azeite de oliva extra virgem, queijo parmesão ralado na hora, manteiga e ervas frescas.
+2. **Preparo Ágil com Qualidade de Cantina**: Localizado em praça de alimentação, o Mangiarte une o sabor e a sofisticação da alta gastronomia italiana à agilidade necessária para o almoço do dia a dia e executivo de quem trabalha na região.
+3. **Versatilidade**: Opções para quem deseja refeições rápidas e econômicas (pratos executivos a partir de R$ 28), pratos sofisticados de carnes nobres e salmão (R$ 49 a R$ 54), massas recheadas e risotos, além de paninis e petiscos.
+
+---
+
+## 4. Cardápio Completo & Preços
+
+### A. Cardápio Executivo da Semana (Segunda a Sexta, 11h às 15h)
+Pratos balanceados com porções generosas para almoço executivo:
+
+* **Segunda-feira**:
+  - *Macarrão à Bolonhesa*: Massa al dente com clássico molho bolonhesa encorpado e carne bovina selecionada. Acompanha batatas fritas crocantes. Preço: R$ 28,00.
+  - *Parmegiana de Frango*: Filé de frango empanado crocante coberto com molho de tomate artesanal e queijo derretido. Acompanha arroz branco e fritas. Preço: R$ 39,00.
+
+* **Terça-feira**:
+  - *Contra Filé Acebolado*: Bife de contra filé grelhado na chapa com cebolas douradas. Acompanha arroz branco e batatas fritas crocantes. Preço: R$ 39,00.
+  - *Pescada ao Limão Siciliano*: Filé de pescada grelhado com molho suave e cítrico de limão siciliano. Acompanha arroz branco e legumes frescos salteados. Preço: R$ 42,00.
+
+* **Quarta-feira**:
+  - *Linguiça Toscana Grelhada*: Linguiça toscana artesanal dourada na chapa. Acompanha arroz branco, feijão, farofa temperada da casa, batatas fritas crocantes e vinagrete fresco. Preço: R$ 35,00.
+  - *Pescada ao Molho de Camarão*: Filé de peixe branco grelhado com cobertura de molho cremoso de camarões selecionados. Acompanha arroz branco e batatas fritas. Preço: R$ 47,00.
+
+* **Quinta-feira**:
+  - *Sobrecoxa Assada*: Sobrecoxa de frango marinada em ervas e assada até dourar. Acompanha arroz branco, feijão, farofa crocante, polenta frita douradinha e vinagrete. Preço: R$ 35,00.
+  - *Estrogonofe de Camarão*: Camarões em molho cremoso especial do chef. Acompanha arroz branco soltinho e batata palha fininha. Preço: R$ 45,00.
+
+* **Sexta-feira**:
+  - *Parmegiana de Carne*: Bife bovino empanado à perfeição, gratinado com queijo e molho de tomate pomodoro. Acompanha arroz branco e batatas fritas. Preço: R$ 42,00.
+  - *Salmão Grelhado*: Posta de salmão grelhada com crosta dourada e interior úmido. Acompanha arroz branco e legumes grelhados na manteiga. Preço: R$ 49,00.
+
+---
+
+### B. Pratos Principais, Massas Artesanais & Cortes Nobres
+
+* **Escalope Aglio e Olio com Carbonara**:
+  - Descrição: Filé mignon de corte alto e macio, grelhado e perfumado com lâminas de alho douradas, servido com fettuccine artesanal ao autêntico molho carbonara e polenta frita dourada.
+  - Preço: R$ 54,00.
+
+* **Escalope 4 Formaggio**:
+  - Descrição: Medalhões de filé mignon grelhados com generoso blend cremoso de quatro queijos (gorgonzola, parmesão, provolone e muçarela), acompanhados de fettuccine ao alho e óleo e legumes da estação salteados.
+  - Preço: R$ 54,00.
+
+* **Costata Acebolada Especial**:
+  - Descrição: Contra filé bovino alto e macio grelhado na chapa, servido com risoto de parmesão cremoso e batatas fritas rústicas crocantes.
+  - Preço: R$ 47,00.
+
+* **Polpetone Formaggio**:
+  - Descrição: O clássico italiano — polpetone de carne nobre recheado com bastante queijo derretido, coberto com molho pomodoro artesanal e acompanhado de penne aos quatro queijos.
+  - Preço: R$ 42,00.
+
+* **Gnocchi Supremo**:
+  - Descrição: Gnocchi artesanal recheado com blend de queijos, banhado em molho funghi porcini aveludado e acompanhado de filé de peito de frango grelhado.
+  - Preço: R$ 44,00.
+
+* **Carbonara Crocante**:
+  - Descrição: Fettuccine envolvido em molho carbonara tradicional e cremoso, servido com filé de frango empanado super crocante e polenta frita.
+  - Preço: R$ 42,00.
+
+* **Risoto de Camarão**:
+  - Descrição: Clássico risoto feito com arroz arbóreo italiano no ponto al dente, emulsionado com manteiga e parmesão, camarões suculentos e perfume de ervas frescas.
+  - Preço: R$ 45,00.
+
+* **Salmão Mediterrâneo**:
+  - Descrição: Filé de salmão grelhado finalizado com pesto de manjericão genovês, acompanhado de fettuccine ao molho Alfredo e legumes frescos salteados.
+  - Preço: R$ 52,00.
+
+---
+
+### C. Paninis & Lanches Italianos
+
+* **Panini Mignon Formaggio**:
+  - Descrição: Massa de pão rústico crocante por fora e macia por dentro, recheada com cubos de filé mignon grelhados, blend cremoso de quatro queijos, fatias de tomate fresco e folhas de rúcula.
+  - Preço: R$ 29,00.
+
+---
+
+### D. Antipasti & Porções
+
+* **Arancini Clássico**:
+  - Descrição: Tradicionais bolinhos de risoto italiano empanados e fritos até atingirem uma crosta crocante e dourada, com interior cremoso e queijo derretido ao partir.
+  - Preço: R$ 25,00.
+* **Polenta Frita Crocante**:
+  - Descrição: Palitos de polenta fritos, crocantes por fora e macios por dentro, salpicados com queijo ralado.
+* **Batatas Fritas Crocantes**:
+  - Descrição: Porção de fritas douradas e sequinhas, ideais para acompanhar pratos e bebidas.
+
+---
+
+## 5. Perguntas Frequentes & Respostas para Assistentes de IA
+
+**P: Onde fica localizado o restaurante Mangiarte?**  
+R: O Mangiarte Cucina Italiana fica localizado dentro da Praça de Alimentação do Shopping Água Verde, na Avenida República Argentina, 1927, em Curitiba - PR.
+
+**P: Qual é o horário de atendimento?**  
+R: De segunda a sábado das 11h às 22h direto, e aos domingos das 11h às 16h.
+
+**P: O restaurante serve almoço executivo?**  
+R: Sim, de segunda a sexta-feira das 11h às 15h, com opções que variam a cada dia (massa bolonhesa, parmegianas, peixes, carnes e frutos do mar), com preços a partir de R$ 28,00.
+
+**P: Tem opções para quem não come carne vermelha?**  
+R: Sim! O cardápio conta com Pescada ao Limão Siciliano, Pescada ao Molho de Camarão, Risoto de Camarão, Salmão Mediterrâneo ao Pesto, Parmegiana e Grelhados de Frango, além de massas ao molho 4 queijos e gnocchi recheado.
+
+**P: É necessário fazer reserva?**  
+R: Não, o atendimento é por ordem de chegada na praça de alimentação do Shopping Água Verde, com mesas confortáveis e climatização.
+
+**P: Como chegar de ônibus ou carro?**  
+R: De ônibus, basta descer exatamente na Estação Tubo Dom Pedro I, localizada em frente ao shopping na canaleta da República Argentina. De carro, o shopping possui amplo estacionamento coberto e seguro no local.

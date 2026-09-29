@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# LLM and AI Discoverability standard (llmstxt.org)
+# llms.txt: https://restaurantemangiarte.com.br/llms.txt
+# llms-full.txt: https://restaurantemangiarte.com.br/llms-full.txt
+
 Sitemap: https://restaurantemangiarte.com.br/sitemap.xml
